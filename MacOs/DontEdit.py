@@ -62,20 +62,20 @@ HELP = {"--HELP", "--Help", "--help", "-h", "-H"}
 GUI = {"--GUI", "--Gui", "--gui", "-GU","-Gu"}
 GLOBAL = {"--GLOBAL", "--Global", "--global", "-G", "-g"}
 LOCAL = {"--LOCAL", "--Local", "--local", "-l", "-L"}
-GuiLocal = {"--GUI-LOCAL", "--Gui-local", "--gui-local", "--g-l", "--G-l", "--G-L"}
+GuiLocal = {"--GUI-LOCAL", "--Gui-Local", "--gui-local", "--g-l", "--G-l", "--G-L"}
 GlobalManualArgument = {"--MANUAL-GLOBAL", "--Manual-Global", "--manual-global", "--m-g", "--M-g", "--M-G"}
 LocalManualArgument = {"--MANUAL-LOCAL", "--Manual-Local", "--manual-local", "--m-l", "--M-l", "--M-L"}
 installRequirement = {"--INSTALL", "--install", "--in"}
 uninstallRequirement = {"--UNINSTALL", "--uninstall", "--un"}
 conenctRDP = {"--xfreerdp", "--XFREERDP", "--XFREE", "--xfree"}
-pipForce = {"--pipForce","--pip-force","--PIP-FORCE", "--pipforce"}
+pipForce = {"--pipForce","--Pip-Force","--PIP-FORCE", "--pipforce"}
 autoConnect = {"--autoConnect", "--autoconnect", "--auto", "--AUTO"}
 skipGlobal = {"--SKIPGLOBAL", "--skip-Global", "--skip-global", "--Skip-Global", "--Skip-global"}
 skipLocal = {"--skip-Local", "--SKIP-LOCAL", "--skip-local", "--Skip-Local", "--Skip-local"}
 skipManG = {"--skip-manual-global", "--SKIP-MANUAL-GLOBAL", "--skip-manual-global", "--Skip-Manual-Global", "--Skip-manual-global"}
 skipManL = {"--skip-manual-local", "--SKIP-MANUAL-LOCAL", "--skip-manual-local", "--Skip-Manual-Local", "--Skip-manual-local"}
-GlobalHelp = {"--GlobalHelp", "--globalHelp", "--GLOBALHELP", "--global-help", "--Global-help", "--GLOBAL-HELP"}
-LocalHelp = {"--LocalHelp", "--localHelp", "--LOCALHELP", "--local-help", "--Local-help", "--LOCAL-HELP"}
+GlobalHelp = {"--GlobalHelp", "--globalHelp", "--GLOBALHELP", "--global-help", "--Global-Help", "--GLOBAL-HELP"}
+LocalHelp = {"--LocalHelp", "--localHelp", "--LOCALHELP", "--local-help", "--Local-Help", "--LOCAL-HELP"}
 FIX = {"--FIX", "--fix", "-f", "-F"}
 
 
