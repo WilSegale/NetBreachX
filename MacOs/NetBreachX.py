@@ -1,5 +1,6 @@
 from DontEdit import *
 from DontEdit_HelpMessage import *
+
 #this is for the user to understand what the program does
 def show_help():
 
@@ -106,7 +107,7 @@ def Show_GUI():
             subprocess.run(GuiScript)  # the script to run after loading
         else:    
             # makes a pop up dialog to tell the user that the user is not root
-            print(f"[ {RED}FAIL{RESET} ] TIME:{formatted_time} Please run as ROOT. DATE:{current_date}")
+            print(f"\n[ {RED}FAIL{RESET} ] TIME:{formatted_time} Please run as ROOT. DATE:{current_date}")
             print(f"ERROR:TIME:{formatted_time} Please run as ROOT. DATE:{current_date}", file=ERROR)
     else:
         # makes a pop up dialog to tell the user that the OS is not correct
