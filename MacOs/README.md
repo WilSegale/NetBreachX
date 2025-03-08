@@ -23,6 +23,7 @@ python3 NetBreachX.py --uninstall
 
 ## To use the program you can type one of the following commands
 ```bash 
+
 python3 NetBreachX.py --local
 python3 NetBreachX.py --MANUAL-LOCAL
 python3 NetBreachX.py --xfreerdp

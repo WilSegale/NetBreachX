@@ -141,4 +141,8 @@ def main():
         sys.exit()
 
 if __name__ == "__main__":
-    main()
+    # Check if the platform is not "win32" (Windows)
+    if platform.system() != "Windows":
+            print(f"{BRIGHT}{RED}[-]{RESET} Not supported for your OS")
+    else:
+        main()
