@@ -503,12 +503,12 @@ try:
         
         #has the help for global mode
         elif argument[1] in GlobalHelp:
-            subprocess.run(GlobalHelp)
+            subprocess.run(GlobalHelpBash)
             sys.exit()
         
         #has the help for local mode
         elif argument[1] in LocalHelp:
-            subprocess.run(LocalHelp)
+            subprocess.run(LocalHelpBash)
             sys.exit()
 
         # error message for the user if the argument is not correct
