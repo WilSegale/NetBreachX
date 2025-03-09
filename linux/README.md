@@ -25,18 +25,19 @@ python3 NetBreachX.py --uninstall
 ```bash
 sudo python3 NetBreachX.py --GUI
 sudo python3 NetBreachX.py --Global
+sudo python3 NetBreachX.py --MANUAL-GLOBAL
+sudo python3 NetBreachX.py --GlobalHelp
+sudo python3 NetBreachX.py --skip-manual-global
+sudo python3 NetBreachX.py --SKIPGLOBAL
+
 python3 NetBreachX.py --local
 python3 NetBreachX.py --GUI-LOCAL
-sudo python3 NetBreachX.py --MANUAL-GLOBAL
 python3 NetBreachX.py --MANUAL-LOCAL
 python3 NetBreachX.py --xfreerdp
 python3 NetBreachX.py --pipForce
 python3 NetBreachX.py --autoConnect
-sudo python3 NetBreachX.py --SKIPGLOBAL
 python3 NetBreachX.py --skip-Local
-sudo python3 NetBreachX.py --skip-manual-global
 python3 NetBreachX.py --skip-manual-local
-sudo python3 NetBreachX.py --GlobalHelp
 python3 NetBreachX.py --LocalHelp
 ```
 
