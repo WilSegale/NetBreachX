@@ -56,6 +56,9 @@ GRAY_TEXT = "\033[90m"
 CYAN_TEXT = "\033[36m"
 RESET = "\033[0m"
 
+#check for the internet connection
+Link="google.com"
+
 
 # Define constants for command-line arguments
 HELP = {"--HELP", "--Help", "--help", "-h", "-H"}

@@ -71,7 +71,7 @@ def Show_GUI():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="8.8.8.8"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -98,10 +98,11 @@ def Show_GUI():
                     bar_length = int(progress * width)  # Calculate the number of dots for the current progress
                     bar = GREEN + '•' * bar_length + RESET + ' ' * (width - bar_length)  # Construct the loading bar string
                     percentage = int(progress * 100)  # Calculate the percentage of completion
-                    
+
                     # Print the loading bar and percentage, replacing the line each iteration
                     print(f'\rLoading {ProgramName} in GUI mode [{bar}] {percentage} % ', end='', flush=False)
-                    
+
+
                     time.sleep(delay)  # Pause to control the update rate
             print_loading_bar(50)
             subprocess.run(GuiScript)  # the script to run after loading
@@ -125,7 +126,7 @@ def show_GLOBAL():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="https://google.com"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -180,7 +181,7 @@ def show_LOCAL():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="https://google.com"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -230,7 +231,7 @@ def show_GuiLOCAL():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="https://google.com"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -278,7 +279,7 @@ def show_manual_Global():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="https://google.com"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -326,7 +327,7 @@ def show_manual_Local():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="https://google.com"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -374,7 +375,7 @@ def RDPCONENCT():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="https://google.com"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -509,7 +510,7 @@ try:
         elif argument[1] in LocalHelp:
             subprocess.run(LocalHelp)
             sys.exit()
-        
+
         # error message for the user if the argument is not correct
         else:
             print(f'''{ErrorMessage} {explain}''', file=ERROR)

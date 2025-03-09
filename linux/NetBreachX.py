@@ -71,7 +71,7 @@ def Show_GUI():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="8.8.8.8"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -98,10 +98,11 @@ def Show_GUI():
                     bar_length = int(progress * width)  # Calculate the number of dots for the current progress
                     bar = GREEN + '•' * bar_length + RESET + ' ' * (width - bar_length)  # Construct the loading bar string
                     percentage = int(progress * 100)  # Calculate the percentage of completion
-                    
+
                     # Print the loading bar and percentage, replacing the line each iteration
                     print(f'\rLoading {ProgramName} in GUI mode [{bar}] {percentage} % ', end='', flush=False)
-                    
+
+
                     time.sleep(delay)  # Pause to control the update rate
             print_loading_bar(50)
             subprocess.run(GuiScript)  # the script to run after loading
@@ -110,7 +111,6 @@ def Show_GUI():
             print(f"\n[ {RED}FAIL{RESET} ] TIME:{formatted_time} Please run as ROOT. DATE:{current_date}")
             print(f"ERROR:TIME:{formatted_time} Please run as ROOT. DATE:{current_date}", file=ERROR)
     else:
-        # makes a pop up dialog to tell the user that the OS is not correct
         # makes a pop up dialog to tell the user that the OS is not correct
         print(f"TIME:{formatted_time} Wrong OS. Please use the correct OS. DATE:{current_date}")
         print(f"WARNING:TIME:{formatted_time} Wrong OS. Please use the correct OS. DATE:{current_date}",file=ERROR)
@@ -126,7 +126,7 @@ def show_GLOBAL():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="https://google.com"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -181,7 +181,7 @@ def show_LOCAL():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="https://google.com"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -231,7 +231,7 @@ def show_GuiLOCAL():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="https://google.com"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -279,7 +279,7 @@ def show_manual_Global():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="https://google.com"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -327,7 +327,7 @@ def show_manual_Local():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="https://google.com"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -375,7 +375,7 @@ def RDPCONENCT():
     # Get the current date
     current_date = datetime.datetime.now().strftime("%m/%d/%Y")
 
-    def connect(url="https://google.com"):
+    def connect(url=Link):
         try:
             urllib.request.urlopen(url)  # Try to open a connection to the host
             return True  # If successful, return True
@@ -503,14 +503,14 @@ try:
         
         #has the help for global mode
         elif argument[1] in GlobalHelp:
-            subprocess.run(GlobalHelpBash)
+            subprocess.run(GlobalHelp)
             sys.exit()
         
         #has the help for local mode
         elif argument[1] in LocalHelp:
-            subprocess.run(LocalHelpBash)
+            subprocess.run(LocalHelp)
             sys.exit()
-        
+
         # error message for the user if the argument is not correct
         else:
             print(f'''{ErrorMessage} {explain}''', file=ERROR)
