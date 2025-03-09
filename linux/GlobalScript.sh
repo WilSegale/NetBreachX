@@ -107,8 +107,7 @@ if [[ "$1" == *"${HELP}"* ]]; then
     echo
 
 else
-
-    # Check if root user
+    # Check if root user is enabled
     if [[ "${EUID}" -ne 0 ]]; then
         echo -e "[ ${RED}${BRIGHT}FAIL${NC} ]: Please run as root."
         exit 1
