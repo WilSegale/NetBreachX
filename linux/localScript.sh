@@ -91,18 +91,8 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
 
     # Check if the script is run with --help or -h
     if [[ "$1" == *"${HELP}"* ]]; then
-        cat Bash_Help_message.txt
-        echo
-        echo "+++++++++++++++Programs used+++++++++++++++"
-        echo "This program will help you crack passwords"
-        echo "It has two programs inside it, one is Hydra and the other is Nmap"
-        echo
-        echo "+++++++++++++++How to use++++++++++++++++++"
-        echo "To use the program you have to tell the computer what port you want to scan."
-        echo "It will then scan the port that you asked for on the network and see if any ports that you asked are open."
-        echo "If there are any ports that are open, it will ask for a username and hostname."
-        echo "When you give the program the username and hostname, it will try to crack that given parameters you gave it."
-        echo
+        cat HelpLogo.txt
+        $HelpMessage
 
     else
         # Clear the terminal
