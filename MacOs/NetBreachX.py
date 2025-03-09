@@ -6,8 +6,8 @@ def show_help():
 
     HelpFile = open("HELP.txt", "w")
 
-    lineArt(["figlet", f"{name}"])
-    lineArt(["figlet", "? HELP ?"])
+    #lineArt(["figlet", f"{name}"])
+    terminalCommand("cat Bash_Help_message.txt")
     
     # Open a file and print its content
     file_path = 'HelpLogo.txt'
