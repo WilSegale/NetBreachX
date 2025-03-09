@@ -100,7 +100,7 @@ def Show_GUI():
                     percentage = int(progress * 100)  # Calculate the percentage of completion
                     
                     # Print the loading bar and percentage, replacing the line each iteration
-                    print(f'\rLoading {ProgramName} [{bar}] {percentage} % ', end='', flush=False)
+                    print(f'\rLoading {ProgramName} in GUI mode [{bar}] {percentage} % ', end='', flush=False)
                     
                     time.sleep(delay)  # Pause to control the update rate
             print_loading_bar(50)
@@ -155,7 +155,7 @@ def show_GLOBAL():
                     percentage = int(progress * 100)  # Calculate the percentage of completion
                     
                     # Print the loading bar and percentage, replacing the line each iteration
-                    print(f'\rLoading {ProgramName} Globally [{bar}] {percentage} % ', end='', flush=False)
+                    print(f'\rLoading {ProgramName} Global mode [{bar}] {percentage} % ', end='', flush=False)
                     
                     time.sleep(delay)  # Pause to control the update rate
             print_loading_bar(50)
@@ -207,7 +207,7 @@ def show_LOCAL():
                 percentage = int(progress * 100)  # Calculate the percentage of completion
                 
                 # Print the loading bar and percentage, replacing the line each iteration
-                print(f'\rLoading {ProgramName} Locally [{bar}] {percentage} % ', end='', flush=False)
+                print(f'\rLoading {ProgramName} local mode [{bar}] {percentage} % ', end='', flush=False)
                 
                 time.sleep(delay)  # Pause to control the update rate
         print_loading_bar(50)
@@ -257,7 +257,7 @@ def show_GuiLOCAL():
                 percentage = int(progress * 100)  # Calculate the percentage of completion
                 
                 # Print the loading bar and percentage, replacing the line each iteration
-                print(f'\rLoading {ProgramName} Locally [{bar}] {percentage} % ', end='', flush=False)
+                print(f'\rLoading {ProgramName} GUI Local mode [{bar}] {percentage} % ', end='', flush=False)
                 
                 time.sleep(delay)  # Pause to control the update rate
         print_loading_bar(50)
@@ -305,7 +305,7 @@ def show_manual_Global():
                 percentage = int(progress * 100)  # Calculate the percentage of completion
                 
                 # Print the loading bar and percentage, replacing the line each iteration
-                print(f'\rLoading {ProgramName} manually in global mode [{bar}] {percentage} % ', end='', flush=False)
+                print(f'\rLoading {ProgramName} in M-G mode [{bar}] {percentage} % ', end='', flush=False)
                 
                 time.sleep(delay)  # Pause to control the update rate
         print_loading_bar(50)
@@ -353,7 +353,7 @@ def show_manual_Local():
                 percentage = int(progress * 100)  # Calculate the percentage of completion
                 
                 # Print the loading bar and percentage, replacing the line each iteration
-                print(f'\rLoading {ProgramName} manually in local mode [{bar}] {percentage} % ', end='', flush=False)
+                print(f'\rLoading {ProgramName} in M-L mode [{bar}] {percentage} % ', end='', flush=False)
                 
                 time.sleep(delay)  # Pause to control the update rate
         print_loading_bar(50)

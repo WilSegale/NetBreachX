@@ -100,14 +100,14 @@ def Show_GUI():
                     percentage = int(progress * 100)  # Calculate the percentage of completion
                     
                     # Print the loading bar and percentage, replacing the line each iteration
-                    print(f'\rLoading {ProgramName} [{bar}] {percentage} % ', end='', flush=False)
+                    print(f'\rLoading {ProgramName} in GUI mode [{bar}] {percentage} % ', end='', flush=False)
                     
                     time.sleep(delay)  # Pause to control the update rate
             print_loading_bar(50)
             subprocess.run(GuiScript)  # the script to run after loading
         else:    
             # makes a pop up dialog to tell the user that the user is not root
-            print(f"[ {RED}FAIL{RESET} ] TIME:{formatted_time} Please run as ROOT. DATE:{current_date}")
+            print(f"\n[ {RED}FAIL{RESET} ] TIME:{formatted_time} Please run as ROOT. DATE:{current_date}")
             print(f"ERROR:TIME:{formatted_time} Please run as ROOT. DATE:{current_date}", file=ERROR)
     else:
         # makes a pop up dialog to tell the user that the OS is not correct
@@ -155,7 +155,7 @@ def show_GLOBAL():
                     percentage = int(progress * 100)  # Calculate the percentage of completion
                     
                     # Print the loading bar and percentage, replacing the line each iteration
-                    print(f'\rLoading {ProgramName} Globally [{bar}] {percentage} % ', end='', flush=False)
+                    print(f'\rLoading {ProgramName} Global mode [{bar}] {percentage} % ', end='', flush=False)
                     
                     time.sleep(delay)  # Pause to control the update rate
             print_loading_bar(50)
@@ -207,7 +207,7 @@ def show_LOCAL():
                 percentage = int(progress * 100)  # Calculate the percentage of completion
                 
                 # Print the loading bar and percentage, replacing the line each iteration
-                print(f'\rLoading {ProgramName} Locally [{bar}] {percentage} % ', end='', flush=False)
+                print(f'\rLoading {ProgramName} local mode [{bar}] {percentage} % ', end='', flush=False)
                 
                 time.sleep(delay)  # Pause to control the update rate
         print_loading_bar(50)
@@ -257,7 +257,7 @@ def show_GuiLOCAL():
                 percentage = int(progress * 100)  # Calculate the percentage of completion
                 
                 # Print the loading bar and percentage, replacing the line each iteration
-                print(f'\rLoading {ProgramName} Locally [{bar}] {percentage} % ', end='', flush=False)
+                print(f'\rLoading {ProgramName} GUI Local mode [{bar}] {percentage} % ', end='', flush=False)
                 
                 time.sleep(delay)  # Pause to control the update rate
         print_loading_bar(50)
@@ -305,7 +305,7 @@ def show_manual_Global():
                 percentage = int(progress * 100)  # Calculate the percentage of completion
                 
                 # Print the loading bar and percentage, replacing the line each iteration
-                print(f'\rLoading {ProgramName} manually in global mode [{bar}] {percentage} % ', end='', flush=False)
+                print(f'\rLoading {ProgramName} in M-G mode [{bar}] {percentage} % ', end='', flush=False)
                 
                 time.sleep(delay)  # Pause to control the update rate
         print_loading_bar(50)
@@ -353,7 +353,7 @@ def show_manual_Local():
                 percentage = int(progress * 100)  # Calculate the percentage of completion
                 
                 # Print the loading bar and percentage, replacing the line each iteration
-                print(f'\rLoading {ProgramName} manually in local mode [{bar}] {percentage} % ', end='', flush=False)
+                print(f'\rLoading {ProgramName} in M-L mode [{bar}] {percentage} % ', end='', flush=False)
                 
                 time.sleep(delay)  # Pause to control the update rate
         print_loading_bar(50)
