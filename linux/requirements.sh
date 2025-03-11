@@ -58,6 +58,19 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             echo -e "[ ${GREEN}OK${NC} ] ${package_name} is already installed."
         fi
     }
+    yum_Install() {
+        package_name="$1"
+        if ! rpm -q "${package_name}" &>/dev/null; then
+            sudo yum install -y "${package_name}"
+            if [ $? -eq 0 ]; then
+                echo -e "[ ${GREEN}OK${NC} ] ${package_name} installed successfully."
+            else
+                echo -e "[ ${yellow}WARNING${NC} ] ${package_name} installation failed."
+            fi
+        else
+            echo -e "[ ${GREEN}OK${NC} ] ${package_name} is already installed."
+        fi
+    }
 
     # Function to check for installed packages
     checkForPackages() {
@@ -140,6 +153,8 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
 
     if [[ "$1" == "--help" || "$1" == "-h" ]]; then
         HELP
+    elif [[ "$1" == "--YUM" ]]; then
+        yum_Install
     else
         installPackages
     fi
