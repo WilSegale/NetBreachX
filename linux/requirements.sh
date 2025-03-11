@@ -42,35 +42,31 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
         exit 1
     }
 
-    # Function to install packages using apt (modify if using another package manager)
-    install_package() {
+        # Determine package manager (apt or yum)
+    if command -v apt &>/dev/null; then
+        PKG_MANAGER="apt"
+    elif command -v yum &>/dev/null; then
+        PKG_MANAGER="yum"
+    else
+        echo "Unsupported package manager. This script supports apt and yum."
+        exit 1
+    fi
 
+    # Function to install packages
+    install_package() {
         package_name="$1"
-        if ! dpkg -l | grep -q "^ii  ${package_name} "; then
-            sudo apt update
-            sudo apt install -y "${package_name}"
-            if [ $? -eq 0 ]; then
-                echo -e "[ ${GREEN}OK${NC} ] ${package_name} installed successfully."
-            else
-                echo -e "[ ${yellow}WARNING${NC} ] ${package_name} installation failed."
+        if [ "$PKG_MANAGER" == "apt" ]; then
+            if ! dpkg -l | grep -q "^ii  ${package_name} "; then
+                sudo apt update
+                sudo apt install -y "${package_name}"
             fi
-        else
-            echo -e "[ ${GREEN}OK${NC} ] ${package_name} is already installed."
+        elif [ "$PKG_MANAGER" == "yum" ]; then
+            if ! rpm -q "${package_name}" &>/dev/null; then
+                sudo yum install -y "${package_name}"
+            fi
         fi
     }
-    yum_Install() {
-        package_name="$1"
-        if ! rpm -q "${package_name}" &>/dev/null; then
-            sudo yum install -y "${package_name}"
-            if [ $? -eq 0 ]; then
-                echo -e "[ ${GREEN}OK${NC} ] ${package_name} installed successfully."
-            else
-                echo -e "[ ${yellow}WARNING${NC} ] ${package_name} installation failed."
-            fi
-        else
-            echo -e "[ ${GREEN}OK${NC} ] ${package_name} is already installed."
-        fi
-    }
+
 
     # Function to check for installed packages
     checkForPackages() {
@@ -153,8 +149,6 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
 
     if [[ "$1" == "--help" || "$1" == "-h" ]]; then
         HELP
-    elif [[ "$1" == "--YUM" ]]; then
-        yum_Install
     else
         installPackages
     fi
