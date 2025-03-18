@@ -85,7 +85,7 @@ else
                         exit 1
                     fi
                 else
-                    echo "Homebrew is not installed."
+                    echo "Homebrew is installed."
                 fi
             }
             check_brew
