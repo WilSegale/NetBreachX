@@ -195,10 +195,12 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
     # Install packages function
     installPackages() {
         if [ "$(id -u)" -eq 0 ]; then
+            echo ""
             echo "+++++++++++++++++++++++++++++++++++++++++"
             echo "+   Don't use sudo for this script.     +"
             echo "+   Because it can damage your computer +"
             echo "+++++++++++++++++++++++++++++++++++++++++"
+            echo ""
             exit 1
         else
             if [[ "${OSTYPE}" == "darwin"* ]]; then
