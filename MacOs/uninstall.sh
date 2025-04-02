@@ -41,10 +41,8 @@ trap ctrl_c SIGINT
 
 # Checks if the user is ROOT and if they are, it prompts them not to use sudo
 if [ "$(id -u)" -eq 0 ]; then
-    # Puts the ERROR message into line art
-    echo -e "${RED}$(figlet ERROR)${NC}"
-
     # Gives the user something to read so they understand why they got the error
+    echo ""
     echo "+++++++++++++++++++++++++++++++++++++++++"
     echo "+   Don't use sudo for this script.     +"
     echo "+   Because it can damage your computer +"
