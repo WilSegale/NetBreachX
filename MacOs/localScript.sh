@@ -45,6 +45,7 @@ trap ctrl_c SIGINT
 command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
+
 if [[ "$OSTYPE" == "${OS}"* ]]; then
     # Auto-connects the SSH server to the computer
     if [[ "$1" == "--auto" ]]; then
