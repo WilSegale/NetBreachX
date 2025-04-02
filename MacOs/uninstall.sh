@@ -77,6 +77,7 @@ else
             check_brew() {
                 # Check the exit code of the previous command
                 read -p "Do you want to uninstall Homebrew (YES/NO): " YES_NO
+                
                 if [[ "${yes[*]}" == *"${YES_NO}"* ]]; then
                     if [ $? -ne 1 ]; then
                         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
