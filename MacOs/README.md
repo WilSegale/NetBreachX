@@ -43,6 +43,11 @@ python3 NetBreachX.py --skip-manual-local
 python3 NetBreachX.py --LocalHelp
 ```
 
+## If you want to see packages that are installed or not type
+```bash 
+python3 NetBreachX.py --list
+``` 
+
 ## If you are wondering how to use this script just type
 
 ```bash

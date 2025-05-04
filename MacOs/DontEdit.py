@@ -78,6 +78,7 @@ skipManG = {"--skip-manual-global", "--SKIP-MANUAL-GLOBAL", "--skip-manual-globa
 skipManL = {"--skip-manual-local", "--SKIP-MANUAL-LOCAL", "--skip-manual-local", "--Skip-Manual-Local", "--Skip-manual-local"}
 GlobalHelp = {"--GlobalHelp", "--globalHelp", "--GLOBALHELP", "--global-help", "--Global-Help", "--GLOBAL-HELP"}
 LocalHelp = {"--LocalHelp", "--localHelp", "--LOCALHELP", "--local-help", "--Local-Help", "--LOCAL-HELP"}
+ListPackages = {"--list", "--LIST", "--List"}
 FIX = {"--FIX", "--fix", "-f", "-F"}
 
 
@@ -93,6 +94,7 @@ RDPconnect = ["bash", "xfreerdp.sh"]
 
 #argumnent lines
 install = ["bash", "requirements.sh"]
+installList = ["bash", "requirements.sh", "--list"]
 uninstall = ["bash", "uninstall.sh"]
 skipGlobalBASH = ["bash", "GlobalScript.sh", "--skip"]
 skipLocalBASH = ["bash", "localScript.sh", "--skip"]

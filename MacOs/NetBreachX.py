@@ -511,6 +511,11 @@ try:
             subprocess.run(LocalHelp)
             sys.exit()
 
+        # shows the user a list of programs instlled or not
+        elif argument[1] in ListPackages:
+            subprocess.run(installList)
+            sys.exit()
+            
         # error message for the user if the argument is not correct
         else:
             print(f'''{ErrorMessage} {explain}''', file=ERROR)
