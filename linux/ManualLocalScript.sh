@@ -71,7 +71,6 @@ else
 fi
 
 # Check if the script is run with --help or -h
-    # Check if the script is run with --help or -h
 if [[ "$1" == *"${HELP}"* ]]; then
     cat HelpLogo.txt
     $HelpMessage

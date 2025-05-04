@@ -25,7 +25,8 @@ SITE_URL="https://google.com"
 # Root user
 root=0
 
-logo="NetBreach"
+#easy way to change the logo faster
+logo=NetBreachX
 
 # the array that holds nothing in it
 empty=("")
@@ -38,21 +39,19 @@ yes=("YES" "Y" "yes" "y")
 no=("NO" "N" "no" "n")
 
 #the Manual array so the user can see the manual function
-Manual=("Manual" "manual" "MANUAL" "man" "MAN" "Man")
+Manual=("Manual" "manual" "MANUAL" "Man" "MAN" "man")
 
 # The array that contains the exit input
 exit=("exit" "quit" "EXIT" "QUIT" "STOP" "stop")
 
-# The array that contains the help input
-HELP=("--help" "--HELP" "--Help")
+# The array to have auto connect work
+auto=("--auto" "--Auto" "==AUTO" "--autoconnect" "--Autoconnect" "--AUTOCONNECT")
 
-# The array that contains the skip input
-SKIPLocal=("--SKIP-local" "--skip-local" "--Skip-Local")
+# the array to have help message work
+HELP=("-h" "--help" "--HELP" "--Help")
 
-SKIPGlobal=("--SKIP-global" "--skip-global" "--Skip-Global")
-
-#array for the auto funciotn
-auto=("--auto" "--AUTO" "--Auto")
+#hold the array for the skip function
+skip=("--skip" "--SKIP" "--Skip" "-s" "-S")
 
 # Gets the current time in a 12-hour format
 CURRENT_TIME=$(date +"%I:%M:%S %p")
@@ -60,11 +59,11 @@ CURRENT_TIME=$(date +"%I:%M:%S %p")
 # Gets current date in mm/dd/yyyy format
 CURRENT_DATE=$(date +"%m/%d/%Y")
 
-#auto gets the ip address of the router
-IPADDR=$(ip route | awk '/default/ {print $3}')
+#auto finds the ip address of the router
+IP_ADDRESS=$(route -n get default | awk '/gateway/ {print $2}')
 
 # List of required packages/commands (separated by spaces)
-required_packages=("wget" "hydra" "nmap" "ssh" "mysql" "figlet" "dialog" "x11-utils")
+required_packages=("wget" "hydra" "nmap" "ssh" "mysql" "figlet" "zenity")
 
 # Packages to check for installation
 Packages=(
@@ -76,8 +75,7 @@ Packages=(
     "hydra"
     "nmap"
     "figlet"
-    "dialog"
-    "x11-utils"
+    "zenity"
     "freerdp"
 )
 
@@ -86,21 +84,3 @@ pipPackages=(
     "asyncio"
     "pyfiglet"
 )
-
-
-HelpMessage="+++++++++++++++ Programs Used ++++++++++++++++
-This program will help you crack passwords.
-It has two programs inside it: Hydra and Nmap.
-
-+++++++++++++++ How to Use ++++++++++++++++++
-To use the program, you have to tell the computer what port you want to scan.
-It will then scan the port that you asked for on the network and see if any ports are open.
-
-If there are any ports that are open, it will ask for a username and hostname.
-When you provide the username and hostname, it will try to crack the given parameters."
-
-
-
-ERROR_MESSAGE="ERROR:TIME:${CURRENT_TIME} Please run as root. DATE:${CURRENT_DATE}"
-
-xmessage_error="TIME:${CURRENT_TIME} Please run as root. DATE:${CURRENT_DATE}"

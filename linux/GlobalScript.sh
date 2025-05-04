@@ -1,8 +1,12 @@
 #!/bin/bash
 
 # file that hold all the variables that need for the program to work properly
-source DontEdit.sh
-
+if [ -f "DontEdit.sh" ]; then
+    source DontEdit.sh
+else
+    echo "DontEdit.sh not found!"
+    exit 1
+fi
 # Function to handle cleanup on exit
 # quits program with ctrl-c
 EXIT_PROGRAM_WITH_CTRL_C() {
@@ -44,6 +48,7 @@ command_exists() {
 
 # Auto-connects the SSH server to the computer
 if [[ "$1" == *"${auto}"* ]]; then
+
     # Check if the SSH connection file exists also outputs the file with the password so the 
     #user can see what the password is
     if [ -f "${ssh_connection}" ]; then
@@ -75,13 +80,23 @@ else
             sleep 1 
 
             #asks the user if they want to install the packages that are mssing
-            echo "Would you like me to install it for you. YES/NO"
+            echo "Would you like me to install it for you. YES/NO."
+            echo "Or see whats needs to be installed. list"
 
             read -p ">>> " install
             
             if [[ " ${yes[*]} " == *" ${install} "* ]]; then
+                ps aux | grep sudo
+                echo "Input the PID for to kill the root session to install the packages."
+                read -p ">>> " session
+                kill -9 "${session}"
                 bash requirements.sh
                 exit 1
+
+
+            elif [[ " ${list[*]} " == *" ${install} "* ]]; then
+                echo "Listing the packages installed and not installed"
+                bash requirements.sh --list
             else
                 echo "Ok stopping program"
                 exit 1
@@ -92,13 +107,13 @@ else
 fi
 
 # Check if the script is run with --help or -h
-# Check if the script is run with --help or -h
 if [[ "$1" == *"${HELP}"* ]]; then
     cat HelpLogo.txt
     $HelpMessage
 
 else
-    # Check if root user is enabled
+
+    # Check if root user
     if [[ "${EUID}" -ne 0 ]]; then
         echo -e "[ ${RED}${BRIGHT}FAIL${NC} ]: Please run as root."
         exit 1
@@ -138,7 +153,7 @@ else
                 
                 if [[ "${service}" == "ALL" || "${service}" == "all" || "${service}" == "*" ]]; then
                     #tells the user that the program is scanning the network
-                    echo -e "Scanning IP [${GREEN}${IPADDR}/24${NC}]"
+                    echo -e "Scanning IP [${GREEN}${IP_ADDRESS}/24${NC}]"
                     
                     # Tells the user that it can take up to an hour to complete the scanning process
                     echo -e "${RED}This can take up to 1 hour to complete.${NC}"
@@ -191,7 +206,7 @@ else
 
                 else
                     # Scan specific port
-                    echo -e "Scanning IP [${GREEN}${IPADDR}/24${NC}] on port [${GREEN}${service}${NC}]"
+                    echo -e "Scanning IP [${GREEN}${IP_ADDRESS}/24${NC}] on port [${GREEN}${service}${NC}]"
                     sudo nmap -sS $IP_ADDRESS/24 -p $service -oN $service.txt --open
                     read -p "Would you like to see the ${service} on a open file (Yes or No): " SeeFile
 

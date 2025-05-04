@@ -1,6 +1,6 @@
 # !Do not use this software in Schools or Business!
 
-<img src="Linux Logo.JPG" alt="APPLE Verison of the program" width="200" height="200">
+<img src="Linux Logo.JPG" alt="Linux Verison of the program" width="200" height="200">
 
 # Home Page
 - [Home README.md](../)
@@ -97,7 +97,8 @@ ERROR = open("ERROR.log", "a")
 ```
 ## You get rid of this message by going to the ERROR.log file and remove it. By doing 
 ```bash 
-sudo rm -rf ERROR.log,
+sudo rm -rf ERROR.log
+or
 python3 NetBreachX.py --fix
 ``` 
 ## This will fix the program for you.

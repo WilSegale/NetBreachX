@@ -76,8 +76,8 @@ if [[ "$1" == *"${HELP}"* ]]; then
     $HelpMessage
 else
     # Check if root user
-    if [[ $EUID -ne 0 ]]; then
-        echo -e "[ ${RED}FAIL${NC} ]: Please run as root."
+    if [[ $EUID -ne $ROOT ]]; then
+        echo -e "\n[ ${RED}FAIL${NC} ]: Please run as root."
         exit 1
     fi
     if [[ "$OSTYPE" == "${OS}"* ]]; then

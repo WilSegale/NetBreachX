@@ -21,7 +21,7 @@ HowToUseInfo08Color = f"\nIf you want to use the program with GUI in Local mode 
 HowToUseInfo09Color = f"\nIf you want to have the program install required packages by it's self type {GREEN}'python3 {SoftwareName} --install'{RESET}"
 HowToUseInfo10Color = f"\nIf you want to have the program install required packages by it's self type {GREEN}'python3 {SoftwareName} --Pip-Force'{RESET}"
 HowToUseInfo11Color = f"\nIf you want to have the program uninstall required packages by it's self type {GREEN}'python3 {SoftwareName} --uninstall'{RESET}"
-HowToUseInfo12Color = f"\nIf you want to have the program allow you to input the ip address or website manually for global networks type {GREEN}'python3 {SoftwareName} --Manual-Global'{RESET}"
+HowToUseInfo12Color = f"\nIf you want to have the program allow you to input the ip address or website manually for global networks type {GREEN}'sudo python3 {SoftwareName} --Manual-Global'{RESET}"
 HowToUseInfo13Color = f"\nIf you want to have the program allow you to input the ip address or website manually for local networks type {GREEN}'python3 {SoftwareName} --Manual-Local'{RESET}"
 HowToUseInfo14Color = f"\nIf you get a error message you can type {GREEN}'python3 {SoftwareName} --fix'{RESET}"
 HowToUseInfo15Color = f"\nIf you want to remote conenct to a computer type {GREEN}'python3 {SoftwareName} --xfree'{RESET}"
@@ -30,6 +30,7 @@ HowToUseInfo17Color = f"\nIf you want to skip a step type {GREEN}'python3 {Softw
 HowToUseInfo18Color = f"\nIf you want to auto connect to a ssh session {GREEN}'python3 {SoftwareName} --auto'{RESET}"
 HowToUseInfo19Color = f"\nIf you want to see the help message for global networks type {GREEN}'python3 {SoftwareName} --Global-Help'{RESET}"
 HowToUseInfo20Color = f"\nIf you want to see the help message for local networks type {GREEN}'python3 {SoftwareName} --Local-Help'{RESET}"
+HowToUseInfo21Color = f"\nIf you want to see the packages that are installed/not installed. Type {GREEN}'python3 {SoftwareName} --list'{RESET}"
 
 ProgramsUSEDCOLOR = (ProgramsUSEDCOLOR+
                 ProgramsUsedInfo01COLOR+
@@ -57,7 +58,8 @@ InfoColor = (HowToUseColor +
         HowToUseInfo17Color +
         HowToUseInfo18Color +
         HowToUseInfo19Color +
-        HowToUseInfo20Color)
+        HowToUseInfo20Color +
+        HowToUseInfo21Color)
 #--------------HELP MESSAGE END with color-------------------#
 
 #--------------HELP MESSAGE START-------------------#
@@ -90,7 +92,7 @@ HowToUseInfo16 = f"\nIf you want to skip a step type 'sudo python3 {SoftwareName
 HowToUseInfo17 = f"\nIf you want to skip a step type 'python3 {SoftwareName} {skipLocal}'"
 HowToUseInfo19 = f"\nIf you want to see the help message for global networks type 'python3 {SoftwareName} {GlobalHelp}'"
 HowToUseInfo20 = f"\nIf you want to see the help message for local networks type 'python3 {SoftwareName} {LocalHelp}'"
-
+howToUseInfo21 = f"\nIf you want to see the packages that are installed/not installed. Type 'python3 {SoftwareName} {ListPackages}'"
 ProgramsUSED = (ProgramsUSED+
                 ProgramsUsedInfo01+
                 ProgramsUsedInfo02+
@@ -116,7 +118,8 @@ Info = (HowToUse +
         HowToUseInfo16 +
         HowToUseInfo17 +
         HowToUseInfo19 +
-        HowToUseInfo20)
+        HowToUseInfo20 + 
+        howToUseInfo21)
 #--------------HELP MESSAGE END-------------------#
 
 
@@ -140,5 +143,6 @@ Please use the correct number of arguments. Example:
 {autoConnect} put's the program into auto connect, if there is a file with the user SSH username and ip address to use,
 {GlobalHelp} put's it in global help mode that shows you how to use the program in global mode,
 {LocalHelp} put's it in local help mode that shows you how to use the program in local mode,
+{ListPackages} shows the packages that are installed or not,
 {FIX} put's it in fix mode that fixes the program,
 {HELP} put's it in help mode so you understand what you are going to do with this program.'''
