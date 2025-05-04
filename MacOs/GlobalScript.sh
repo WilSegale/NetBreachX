@@ -80,7 +80,8 @@ else
             sleep 1 
 
             #asks the user if they want to install the packages that are mssing
-            echo "Would you like me to install it for you. YES/NO"
+            echo "Would you like me to install it for you. YES/NO."
+            echo "Or see whats needs to be installed. list"
 
             read -p ">>> " install
             
@@ -91,6 +92,11 @@ else
                 kill -9 "${session}"
                 bash requirements.sh
                 exit 1
+
+
+            elif [[ " ${list[*]} " == *" ${install} "* ]]; then
+                echo "Listing the packages installed and not installed"
+                bash requirements.sh --list
             else
                 echo "Ok stopping program"
                 exit 1
