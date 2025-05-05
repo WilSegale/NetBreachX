@@ -125,22 +125,27 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
         fi
     }
 
-    # Install packages function
-    installPackages() {
-        echo "_________PACKAGES INSTALLATION________"
+    listForPackages() {
+        echo "_________APT PACKAGE CHECK________"
         for package in "${Packages[@]}"; do
-            install_package "${package}"
+            if dpkg -l | grep -w "^ii" | grep -qw "$package"; then
+                echo "${package} ✅"
+            else
+                echo "${package} ❌ (not installed)"
+            fi
         done
 
-        echo "_________PIP PACKAGES INSTALLATION AND PIP UPDATE________"
-        for PIP in "${pipPackages[@]}"; do
-            install_pip_package "${PIP}"
+        echo -e "\n_________PIP PACKAGE CHECK________"
+        for pip_pkg in "${pipPackages[@]}"; do
+            if pip3 list --format=freeze 2>/dev/null | grep -i "^$pip_pkg=="; then
+                echo "${pip_pkg} ✅"
+            else
+                echo "${pip_pkg} ❌ (not installed)"
+            fi
         done
 
-        echo "_________INSTALLED PACKAGES________"
-        checkForPackages
+        exit
     }
-
     # Handle Ctrl+Z (SIGTSTP)
     trap 'EXIT_PROGRAM_WITH_CTRL_Z' SIGTSTP
 
@@ -149,6 +154,10 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
 
     if [[ "$1" == "--help" || "$1" == "-h" ]]; then
         HELP
+    # list of packages taht are installed or not
+    elif [[ "$1" == "--list" ]]; then
+        listForPackages
+    fi
     else
         installPackages
     fi
