@@ -43,7 +43,7 @@ lineArt = subprocess.run
 
 #name of the os
 OS = "Linux"
-name = "linux"
+name = "Linux"
 
 # Define color codes for console output
 BRIGHT = '\033[1m'
@@ -59,26 +59,26 @@ RESET = "\033[0m"
 #check for the internet connection
 Link="google.com"
 
-
 # Define constants for command-line arguments
 HELP = {"--HELP", "--Help", "--help", "-h", "-H"}
 GUI = {"--GUI", "--Gui", "--gui", "-GU","-Gu"}
 GLOBAL = {"--GLOBAL", "--Global", "--global", "-G", "-g"}
 LOCAL = {"--LOCAL", "--Local", "--local", "-l", "-L"}
-GuiLocal = {"--GUI-LOCAL", "--Gui-local", "--gui-local", "--g-l", "--G-l", "--G-L"}
-GlobalManualArgument = {"--MANUAL-GLOBAL", "--Manual-Global", "--manual-global", "--m-g", "--M-g", "--M-G"}
-LocalManualArgument = {"--MANUAL-LOCAL", "--Manual-Local", "--manual-local", "--m-l", "--M-l", "--M-L"}
+GuiLocal = {"--GUI-LOCAL", "--Gui-Local", "--gui-local", "--g-l", "--G-l", "--G-L"}
+GlobalManualArgument = {"--MANUAL-GLOBAL", "--Manual-Global", "--manual-global", "--m-g", "--M-g", "--M-G", "--man-global"}
+LocalManualArgument = {"--MANUAL-LOCAL", "--Manual-Local", "--manual-local", "--m-l", "--M-l", "--M-L", "--man-local"}
 installRequirement = {"--INSTALL", "--install", "--in"}
 uninstallRequirement = {"--UNINSTALL", "--uninstall", "--un"}
 conenctRDP = {"--xfreerdp", "--XFREERDP", "--XFREE", "--xfree"}
-pipForce = {"--pipForce","--pip-force","--PIP-FORCE", "--pipforce"}
+pipForce = {"--pipForce", "--Pip-Force", "--PIP-FORCE", "--pip-force", "-Pip-Force"}
 autoConnect = {"--autoConnect", "--autoconnect", "--auto", "--AUTO"}
 skipGlobal = {"--SKIPGLOBAL", "--skip-Global", "--skip-global", "--Skip-Global", "--Skip-global"}
 skipLocal = {"--skip-Local", "--SKIP-LOCAL", "--skip-local", "--Skip-Local", "--Skip-local"}
 skipManG = {"--skip-manual-global", "--SKIP-MANUAL-GLOBAL", "--skip-manual-global", "--Skip-Manual-Global", "--Skip-manual-global"}
 skipManL = {"--skip-manual-local", "--SKIP-MANUAL-LOCAL", "--skip-manual-local", "--Skip-Manual-Local", "--Skip-manual-local"}
-GlobalHelp = {"--GlobalHelp", "--globalHelp", "--GLOBALHELP", "--global-help", "--Global-help", "--GLOBAL-HELP"}
-LocalHelp = {"--LocalHelp", "--localHelp", "--LOCALHELP", "--local-help", "--Local-help", "--LOCAL-HELP"}
+GlobalHelp = {"--GlobalHelp", "--globalHelp", "--GLOBALHELP", "--global-help", "--Global-Help", "--GLOBAL-HELP"}
+LocalHelp = {"--LocalHelp", "--localHelp", "--LOCALHELP", "--local-help", "--Local-Help", "--LOCAL-HELP"}
+ListPackages = {"--list", "--LIST", "--List"}
 FIX = {"--FIX", "--fix", "-f", "-F"}
 
 
@@ -94,12 +94,13 @@ RDPconnect = ["bash", "xfreerdp.sh"]
 
 #argumnent lines
 install = ["bash", "requirements.sh"]
+installList = ["bash", "requirements.sh", "--list"]
 uninstall = ["bash", "uninstall.sh"]
 skipGlobalBASH = ["bash", "GlobalScript.sh", "--skip"]
 skipLocalBASH = ["bash", "localScript.sh", "--skip"]
 skipManGBASH = ["bash", "ManualGlobalScript.sh", "--skip"]
 skipManLBASH = ["bash", "ManualLocalScript.sh", "--skip"]
 SaveAuto = ["bash", "GlobalScript.sh", "--auto"]
-GlobalHelpBash = ["bash", "GlobalScript.sh", "--help"]
-LocalHelpBash = ["bash", "localScript.sh", " --help"]
+GlobalHelp = ["bash", "GlobalScript.sh", "--help"]
+LocalHelp = ["bash", "localScript.sh", "--help"]
 PIP = ["bash", "requirements.sh", "--pipForce"]
