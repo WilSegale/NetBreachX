@@ -1,10 +1,6 @@
 #!/bin/bash
-if [ -f "DontEdit.sh" ]; then
-    source DontEdit.sh
-else
-    echo "DontEdit.sh not found!"
-    exit 1
-fi
+source DontEdit.sh
+
 clear
 # Function to handle cleanup on exit
 # quits program with ctrl-c

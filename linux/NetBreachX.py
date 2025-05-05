@@ -6,11 +6,9 @@ def show_help():
 
     HelpFile = open("HELP.txt", "w")
 
-    #lineArt(["figlet", f"{name}"])
-    
     # Open a file and print its content
     file_path = 'HelpLogo.txt'
-    terminalCommand("cat HelpLogo.txt")
+    terminalCommand("cat HelpLogo.txt")    
 
     with open(file_path, 'r') as file:
         content = file.read()
@@ -503,19 +501,14 @@ try:
         
         #has the help for global mode
         elif argument[1] in GlobalHelp:
-            subprocess.run(GlobalHelp)
+            subprocess.run(GlobalHelpBash)
             sys.exit()
         
         #has the help for local mode
         elif argument[1] in LocalHelp:
-            subprocess.run(LocalHelp)
+            subprocess.run(LocalHelpBash)
             sys.exit()
 
-        # shows the user a list of programs instlled or not
-        elif argument[1] in ListPackages:
-            subprocess.run(installList)
-            sys.exit()
-            
         # error message for the user if the argument is not correct
         else:
             print(f'''{ErrorMessage} {explain}''', file=ERROR)

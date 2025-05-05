@@ -1,12 +1,8 @@
 #!/bin/bash
 
 # file that hold all the variables that need for the program to work properly
-if [ -f "DontEdit.sh" ]; then
-    source DontEdit.sh
-else
-    echo "DontEdit.sh not found!"
-    exit 1
-fi
+source DontEdit.sh
+
 # Function to handle cleanup on exit
 # quits program with ctrl-c
 EXIT_PROGRAM_WITH_CTRL_C() {
@@ -45,7 +41,6 @@ trap ctrl_c SIGINT
 command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
-
 if [[ "$OSTYPE" == "${OS}"* ]]; then
     # Auto-connects the SSH server to the computer
     if [[ "$1" == "--auto" ]]; then
