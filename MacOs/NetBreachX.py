@@ -1,6 +1,5 @@
 from DontEdit import *
 from DontEdit_HelpMessage import *
-from flask_migrate import upgrade
 
 #this is for the user to understand what the program does
 def show_help():
