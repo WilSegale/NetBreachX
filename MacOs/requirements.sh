@@ -243,6 +243,30 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
 
         exit
     }
+
+    upgradePackages() {
+        echo "_________BREW PACKAGE UPGRADE________"
+        for package in "${Packages[@]}"; do
+            brew upgrade "${package}"
+            if [ $? -eq 0 ]; then
+                echo -e "[ ${GREEN}OK${NC} ] ${package} upgraded successfully."
+            else
+                echo -e "[ ${RED}FAIL${NC} ] ${package} upgrade failed."
+            fi
+        done
+
+        echo -e "\n_________PIP PACKAGE UPGRADE________"
+        for pip_pkg in "${pipPackages[@]}"; do
+            python3 -m pip install --upgrade "${pip_pkg}"
+            if [ $? -eq 0 ]; then
+                echo -e "[ ${GREEN}OK${NC} ] ${pip_pkg} upgraded successfully."
+            else
+                echo -e "[ ${RED}FAIL${NC} ] ${pip_pkg} upgrade failed."
+            fi
+        done
+
+        exit
+    }
     # Handle Ctrl+Z (SIGTSTP)
     trap 'EXIT_PROGRAM_WITH_CTRL_Z' SIGTSTP
 
@@ -251,8 +275,12 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
 
     if [[ "$1" == "--help" || "$1" == "-h" ]]; then
         HELP
+    
     elif [[ "$1" == "--list" ]]; then
         listForPackages
+    
+    elif [[ "$1" == "--upgrade" ]]; then
+        upgradePackages
     fi
 
     WifiConnection

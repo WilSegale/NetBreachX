@@ -145,4 +145,5 @@ Please use the correct number of arguments. Example:
 {LocalHelp} put's it in local help mode that shows you how to use the program in local mode,
 {ListPackages} shows the packages that are installed or not,
 {FIX} put's it in fix mode that fixes the program,
+{upgrade} put's it in upgrade mode that upgrades the program,
 {HELP} put's it in help mode so you understand what you are going to do with this program.'''

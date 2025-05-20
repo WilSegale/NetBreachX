@@ -1,5 +1,6 @@
 from DontEdit import *
 from DontEdit_HelpMessage import *
+from flask_migrate import upgrade
 
 #this is for the user to understand what the program does
 def show_help():
@@ -514,6 +515,10 @@ try:
         # shows the user a list of programs instlled or not
         elif argument[1] in ListPackages:
             subprocess.run(installList)
+            sys.exit()
+
+        elif argument[1] in upgrade:
+            subprocess.run(upgrade)
             sys.exit()
             
         # error message for the user if the argument is not correct
