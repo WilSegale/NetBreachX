@@ -146,6 +146,28 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
 
         exit
     }
+
+    upgradePackages() {
+        echo "________UPGRADING APT PACKAGES________"
+        for package in "${Packages[@]}"; do
+            if dpkg -l | grep -q "^ii  ${package} "; then
+                sudo apt update
+                sudo apt upgrade -y "${package}"
+            else
+                echo -e "[ ${RED}FAIL${NC} ] ${package} not installed."
+            fi
+        done
+
+        echo "________UPGRADING PIP PACKAGES________"
+        for pipPackage in "${pipPackages[@]}"; do
+            if python3 -c "import ${pipPackage}" &>/dev/null; then
+                install_pip_package "${pipPackage}"
+            else
+                echo -e "[ ${RED}FAIL${NC} ] ${pipPackage} not installed."
+            fi
+        done
+    }
+    # Function to install packages
     # Handle Ctrl+Z (SIGTSTP)
     trap 'EXIT_PROGRAM_WITH_CTRL_Z' SIGTSTP
 
@@ -157,7 +179,10 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
     # list of packages taht are installed or not
     elif [[ "$1" == "--list" ]]; then
         listForPackages
-    fi
+
+    elif [[ "$1" == "--upgrade" ]]; then
+        upgradePackages
+
     else
         installPackages
     fi

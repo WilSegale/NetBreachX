@@ -80,6 +80,7 @@ GlobalHelp = {"--GlobalHelp", "--globalHelp", "--GLOBALHELP", "--global-help", "
 LocalHelp = {"--LocalHelp", "--localHelp", "--LOCALHELP", "--local-help", "--Local-Help", "--LOCAL-HELP"}
 ListPackages = {"--list", "--LIST", "--List"}
 FIX = {"--FIX", "--fix", "-f", "-F"}
+upgrade = {"--UPGRADE", "--upgrade", "--Upgrade", "-U", "-u"}
 
 
 # Define list of scripts to run
@@ -103,4 +104,5 @@ skipManLBASH = ["bash", "ManualLocalScript.sh", "--skip"]
 SaveAuto = ["bash", "GlobalScript.sh", "--auto"]
 GlobalHelp = ["bash", "GlobalScript.sh", "--help"]
 LocalHelp = ["bash", "localScript.sh", "--help"]
+upgradeBASH = ["bash", "requirements.sh", "--upgrade"]
 PIP = ["bash", "requirements.sh", "--pipForce"]

@@ -517,7 +517,7 @@ try:
             sys.exit()
 
         elif argument[1] in upgrade:
-            subprocess.run(upgrade)
+            subprocess.run(upgradeBASH)
             sys.exit()
             
         # error message for the user if the argument is not correct
