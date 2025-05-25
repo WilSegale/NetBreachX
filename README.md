@@ -2,6 +2,13 @@
 # CREATION DATA: NOV/1/2022
 <img src="NetBreachx.png" alt="NetBreach img " width="100px" height="100px">
 
+### Credits
+
+NetBreachX integrates the following tools:
+- [Nmap](https://nmap.org/) — Copyright © Gordon Lyon
+- [Hydra](https://github.com/vanhauser-thc/thc-hydra) — Copyright © THC
+
+This tool is for educational and ethical use only.
 # !Do not use this software in Schools or Business! 
 
 # First type 
