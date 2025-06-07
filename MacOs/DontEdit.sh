@@ -45,7 +45,7 @@ Manual=("Manual" "manual" "MANUAL" "Man" "MAN" "man")
 exit=("exit" "quit" "EXIT" "QUIT" "STOP" "stop")
 
 # The array to have auto connect work
-auto=("--auto" "--Auto" "==AUTO" "--autoconnect" "--Autoconnect" "--AUTOCONNECT")
+auto=("-a" "-A" "--auto" "--Auto" "--autoconnect" "--Autoconnect" "--AUTOCONNECT")
 
 # the array to have help message work
 HELP=("-h" "--help" "--HELP" "--Help")

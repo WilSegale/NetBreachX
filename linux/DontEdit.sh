@@ -52,7 +52,7 @@ SKIPLocal=("--SKIP-local" "--skip-local" "--Skip-Local")
 SKIPGlobal=("--SKIP-global" "--skip-global" "--Skip-Global")
 
 #array for the auto funciotn
-auto=("--auto" "--AUTO" "--Auto")
+auto=("-a" "-A" "--auto" "--Auto" "--autoconnect" "--Autoconnect" "--AUTOCONNECT")
 
 # Gets the current time in a 12-hour format
 CURRENT_TIME=$(date +"%I:%M:%S %p")
