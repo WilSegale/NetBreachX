@@ -31,6 +31,7 @@ HowToUseInfo18Color = f"\nIf you want to auto connect to a ssh session {GREEN}'p
 HowToUseInfo19Color = f"\nIf you want to see the help message for global networks type {GREEN}'python3 {SoftwareName} --Global-Help'{RESET}"
 HowToUseInfo20Color = f"\nIf you want to see the help message for local networks type {GREEN}'python3 {SoftwareName} --Local-Help'{RESET}"
 HowToUseInfo21Color = f"\nIf you want to see the packages that are installed/not installed. Type {GREEN}'python3 {SoftwareName} --list'{RESET}"
+howToUseInfo22Color = f"\nIf you want to upgrade the packages. Type {GREEN}'python3 {SoftwareName} --Upgrade'{RESET}"
 
 ProgramsUSEDCOLOR = (ProgramsUSEDCOLOR+
                 ProgramsUsedInfo01COLOR+
@@ -59,7 +60,8 @@ InfoColor = (HowToUseColor +
         HowToUseInfo18Color +
         HowToUseInfo19Color +
         HowToUseInfo20Color +
-        HowToUseInfo21Color)
+        HowToUseInfo21Color +
+        howToUseInfo22Color)
 #--------------HELP MESSAGE END with color-------------------#
 
 #--------------HELP MESSAGE START-------------------#
@@ -93,6 +95,8 @@ HowToUseInfo17 = f"\nIf you want to skip a step type 'python3 {SoftwareName} {sk
 HowToUseInfo19 = f"\nIf you want to see the help message for global networks type 'python3 {SoftwareName} {GlobalHelp}'"
 HowToUseInfo20 = f"\nIf you want to see the help message for local networks type 'python3 {SoftwareName} {LocalHelp}'"
 howToUseInfo21 = f"\nIf you want to see the packages that are installed/not installed. Type 'python3 {SoftwareName} {ListPackages}'"
+howToUseInfo22 = f"\nIf you want to upgrade the packages. Type 'python3 {SoftwareName} --Upgrade'"
+
 ProgramsUSED = (ProgramsUSED+
                 ProgramsUsedInfo01+
                 ProgramsUsedInfo02+
@@ -144,5 +148,6 @@ Please use the correct number of arguments. Example:
 {GlobalHelp} put's it in global help mode that shows you how to use the program in global mode,
 {LocalHelp} put's it in local help mode that shows you how to use the program in local mode,
 {ListPackages} shows the packages that are installed or not,
+{upgrade} upgrades the packages that are installed,
 {FIX} put's it in fix mode that fixes the program,
 {HELP} put's it in help mode so you understand what you are going to do with this program.'''
