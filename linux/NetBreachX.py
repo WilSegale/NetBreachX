@@ -514,8 +514,9 @@ try:
         # shows the user a list of programs instlled or not
         elif argument[1] in ListPackages:
             subprocess.run(installList)
-            sys.exit()
-
+            sys.exit();
+        
+        #allows the program to understand how to update the packages
         elif argument[1] in upgrade:
             subprocess.run(upgradeBASH)
             sys.exit()
