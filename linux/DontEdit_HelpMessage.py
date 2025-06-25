@@ -31,8 +31,7 @@ HowToUseInfo18Color = f"\nIf you want to auto connect to a ssh session {GREEN}'p
 HowToUseInfo19Color = f"\nIf you want to see the help message for global networks type {GREEN}'python3 {SoftwareName} --Global-Help'{RESET}"
 HowToUseInfo20Color = f"\nIf you want to see the help message for local networks type {GREEN}'python3 {SoftwareName} --Local-Help'{RESET}"
 HowToUseInfo21Color = f"\nIf you want to see the packages that are installed/not installed. Type {GREEN}'python3 {SoftwareName} --list'{RESET}"
-howToUseInfo22Color = f"\nIf you want to upgrade the packages. Type {GREEN}'python3 {SoftwareName} --Upgrade'{RESET}"
-
+howToUseInfo22Color = f"\nIf you have to update the packages just type. {GREEN}'python3 {SoftwareName} --update{RESET}'"
 ProgramsUSEDCOLOR = (ProgramsUSEDCOLOR+
                 ProgramsUsedInfo01COLOR+
                 ProgramsUsedInfo02COLOR+
@@ -95,7 +94,7 @@ HowToUseInfo17 = f"\nIf you want to skip a step type 'python3 {SoftwareName} {sk
 HowToUseInfo19 = f"\nIf you want to see the help message for global networks type 'python3 {SoftwareName} {GlobalHelp}'"
 HowToUseInfo20 = f"\nIf you want to see the help message for local networks type 'python3 {SoftwareName} {LocalHelp}'"
 howToUseInfo21 = f"\nIf you want to see the packages that are installed/not installed. Type 'python3 {SoftwareName} {ListPackages}'"
-howToUseInfo22 = f"\nIf you want to upgrade the packages. Type 'python3 {SoftwareName} --Upgrade'"
+howToUseInfo22 = f"\nIf you have to update the packages just type. 'python3 {SoftwareName} --update'"
 
 ProgramsUSED = (ProgramsUSED+
                 ProgramsUsedInfo01+
@@ -123,7 +122,8 @@ Info = (HowToUse +
         HowToUseInfo17 +
         HowToUseInfo19 +
         HowToUseInfo20 + 
-        howToUseInfo21)
+        howToUseInfo21 +
+        howToUseInfo22)
 #--------------HELP MESSAGE END-------------------#
 
 
@@ -132,22 +132,23 @@ Info = (HowToUse +
 ErrorMessage = f'''WARNING:TIME:{formatted_time} Please use the correct number of arguments. DATE:{current_date}'''
 explain = f'''
 Please use the correct number of arguments. Example: 
-{GLOBAL} put's it in global mode for attacking global networks, 
-{GUI} put's it in GUI mode to attacking in GUI GLOBAL networks, 
-{LOCAL} put's it in local mode for attacking local networks,
-{GuiLocal} put's it in GUI LOCAL mode for attacking in GUI LOCAL networks,
-{GlobalManualArgument} put's it in global manual mode that shows you how to use the program,
-{LocalManualArgument} put's it in local manual mode that shows you how to use the program,
-{installRequirement} put's it in install mode that install's the required packages,
-{pipForce} put's it in pipForce mode that installs the required packages with pipForce,
-{uninstallRequirement} put's it in uninstall mode that uninstall's the packages,
-{conenctRDP} put's the program into RDP connection mode,
-{skipGlobal} put's it in skip global mode that skips the global mode,
-{skipLocal} put's it in skip local mode that skips the local mode,
-{autoConnect} put's the program into auto connect, if there is a file with the user SSH username and ip address to use,
-{GlobalHelp} put's it in global help mode that shows you how to use the program in global mode,
-{LocalHelp} put's it in local help mode that shows you how to use the program in local mode,
-{ListPackages} shows the packages that are installed or not,
-{upgrade} upgrades the packages that are installed,
-{FIX} put's it in fix mode that fixes the program,
-{HELP} put's it in help mode so you understand what you are going to do with this program.'''
+{GREEN}{GLOBAL}{RESET}put's it in global mode for attacking global networks, 
+{GREEN}{GUI}{RESET} put's it in GUI mode to attacking in GUI GLOBAL networks, 
+{GREEN}{LOCAL}{RESET} put's it in local mode for attacking local networks,
+{GREEN}{GuiLocal}{RESET} put's it in GUI LOCAL mode for attacking in GUI LOCAL networks,
+{GREEN}{GlobalManualArgument}{RESET} put's it in global manual mode that shows you how to use the program,
+{GREEN}{LocalManualArgument}{RESET} put's it in local manual mode that shows you how to use the program,
+{GREEN}{installRequirement}{RESET} put's it in install mode that install's the required packages,
+{GREEN}{pipForce}{RESET} put's it in pipForce mode that installs the required packages with pipForce,
+{GREEN}{uninstallRequirement}{RESET} put's it in uninstall mode that uninstall's the packages,
+{GREEN}{skipGlobal}{RESET} put's it in skip global mode that skips the global mode,
+{GREEN}{conenctRDP}{RESET} put's the program into RDP connection mode,
+{GREEN}{skipLocal}{RESET} put's it in skip local mode that skips the local mode,
+{GREEN}{autoConnect}{RESET} put's the program into auto connect, if there is a file with the user SSH username and ip address to use,
+{GREEN}{GlobalHelp}{RESET} put's it in global help mode that shows you how to use the program in global mode,
+{GREEN}{LocalHelp}{RESET} put's it in local help mode that shows you how to use the program in local mode,
+{GREEN}{ListPackages}{RESET} shows the packages that are installed or not,
+{GREEN}{FIX}{RESET} put's it in fix mode that fixes the program,
+{GREEN}{upgrade}{RESET} put's it in update mode so the packages will always work,
+{GREEN}{HELP}{RESET} put's it in help mode so you understand what you are going to do with this program.'''
+#--------------HELP MESSAGE END-------------------#
