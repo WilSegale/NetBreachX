@@ -515,7 +515,11 @@ try:
         elif argument[1] in ListPackages:
             subprocess.run(installList)
             sys.exit()
-            
+        
+        #allows the program to understand how to update the packages
+        elif argument[1] in upgrade:
+            subprocess.run(upgradeBASH)
+
         # error message for the user if the argument is not correct
         else:
             print(f'''{ErrorMessage} {explain}''', file=ERROR)
