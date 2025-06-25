@@ -147,7 +147,7 @@ else
             fi
         # If the user does not want to remove the packages, it exits the program
         elif [[ "${no[*]}" == *"$YES_NO"* ]]; then
-            echo -e "${RED}${BRIGHT}Ok, I will not remove the packages.${NC}"
+            echo -e "${GREEN}${BRIGHT}Ok, I will not remove the packages.${NC}"
             exit 1
         fi
     else
