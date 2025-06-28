@@ -502,25 +502,24 @@ try:
             sys.exit()
         
         #has the help for global mode
-        elif argument[1] in GlobalHelp:
+        elif argument[1] in GlobalHelpPy:
             subprocess.run(GlobalHelp)
             sys.exit()
         
         #has the help for local mode
-        elif argument[1] in LocalHelp:
+        elif argument[1] in LocalHelpPy:
             subprocess.run(LocalHelp)
             sys.exit()
 
         # shows the user a list of programs instlled or not
         elif argument[1] in ListPackages:
             subprocess.run(installList)
-            sys.exit();
+            sys.exit()
         
         #allows the program to understand how to update the packages
         elif argument[1] in upgrade:
             subprocess.run(upgradeBASH)
-            sys.exit()
-            
+
         # error message for the user if the argument is not correct
         else:
             print(f'''{ErrorMessage} {explain}''', file=ERROR)
