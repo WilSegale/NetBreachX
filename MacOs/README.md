@@ -41,6 +41,7 @@ python3 NetBreachX.py --autoConnect
 python3 NetBreachX.py --skip-Local
 python3 NetBreachX.py --skip-manual-local
 python3 NetBreachX.py --LocalHelp
+python3 NetBreachX.py --upgrade
 ```
 
 ## If you want to see packages that are installed or not type

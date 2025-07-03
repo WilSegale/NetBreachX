@@ -1,7 +1,6 @@
 # !Do not use this software in Schools or Business!
 
-<img src="Linux Logo.JPG" alt="APPLE Verison of the program" width="200" height="200">
-
+<img src="Linux Logo.JPG" alt="Linux Verison of the program" width="200" height="200">
 
 # Home Page
 - [Home README.md](../)
@@ -42,7 +41,13 @@ python3 NetBreachX.py --autoConnect
 python3 NetBreachX.py --skip-Local
 python3 NetBreachX.py --skip-manual-local
 python3 NetBreachX.py --LocalHelp
+python3 NetBreachX.py --upgrade
 ```
+
+## If you want to see packages that are installed or not type
+```bash 
+python3 NetBreachX.py --list
+``` 
 
 ## If you are wondering how to use this script just type
 
