@@ -32,12 +32,12 @@ sudo python3 NetBreachX.py --SKIPGLOBAL
 
 ## Dont need to use root to run
 ```bash
+python3 NetBreachX.py --auto
 python3 NetBreachX.py --local
 python3 NetBreachX.py --GUI-LOCAL
 python3 NetBreachX.py --MANUAL-LOCAL
 python3 NetBreachX.py --xfreerdp
 python3 NetBreachX.py --pipForce
-python3 NetBreachX.py --autoConnect
 python3 NetBreachX.py --skip-Local
 python3 NetBreachX.py --skip-manual-local
 python3 NetBreachX.py --LocalHelp
