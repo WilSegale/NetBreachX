@@ -28,6 +28,9 @@ sudo python3 NetBreachX.py --MANUAL-GLOBAL
 sudo python3 NetBreachX.py --GlobalHelp
 sudo python3 NetBreachX.py --skip-manual-global
 sudo python3 NetBreachX.py --SKIPGLOBAL
+sudo python3 NetBreachX.py --install
+sudo python3 NetBreachX.py --uninstall
+sudo python3 NetBreachX.py --fix
 ```
 
 ## Dont need to use root to run
@@ -40,7 +43,8 @@ python3 NetBreachX.py --pipForce
 python3 NetBreachX.py --auto
 python3 NetBreachX.py --skip-Local
 python3 NetBreachX.py --skip-manual-local
-python3 NetBreachX.py --LocalHelp
+python3 NetBreachX.py --Local-Help
+python3 NetBreachX.py --Global-Help
 python3 NetBreachX.py --upgrade
 ```
 
