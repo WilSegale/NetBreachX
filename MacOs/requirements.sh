@@ -240,9 +240,13 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
                 echo "${pip_pkg} ❌ (not installed)"
             fi
         done
-
+        
         echo -e "\nDo you want me to update the packages for you?"
 
+        read -p ">>> " update
+        if [[ " ${yes[*]} " == *" ${update} "* ]]; then
+            upgradePackages
+        fi
         echo -e "\n_________BREW PACKAGE UPDATE CHECK________"
         for package in "${Packages[@]}"; do
             if brew outdated | grep -q "^$package"; then

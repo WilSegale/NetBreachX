@@ -145,7 +145,11 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
         done
 
         echo -e "\nDo you want me to update the packages for you?"
+        read -p ">>> " update
 
+        if [[ " ${yes[*]} " == *" ${install} "* ]]; then
+            upgradePackages
+        fi
         echo -e "\n_________APT PACKAGE UPDATE CHECK________"
         for package in "${Packages[@]}"; do
             if apt list --upgradable 2>/dev/null | grep -q "^$package/"; then
