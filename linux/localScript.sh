@@ -118,7 +118,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
                 # asks if the user want to see scan on a open file or not
                 read -p "Would you like to see the scan on a open file (Yes or No): " SeeFile
                 if [[ " ${yes[*]} " == *" ${SeeFile} "* ]]; then
-                    echo -e "[ ${GREEN}+${NC} ] Opeing the scan file"
+                    echo -e "[ ${GREEN}+${NC} ] opening the scan file"
                     sleep 1
                     open scan.txt
 
