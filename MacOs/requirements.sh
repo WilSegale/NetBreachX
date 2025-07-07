@@ -246,9 +246,9 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
         echo -e "\n_________BREW PACKAGE UPDATE CHECK________"
         for package in "${Packages[@]}"; do
             if brew outdated | grep -q "^$package"; then
-                echo "$package ❗ (needs update)"
+                echo "${package} ❗ (needs update)"
             else
-                echo "$package ✅ (up to date)"
+                echo "${package} ✅ (up to date)"
             fi
         done
 
