@@ -519,6 +519,7 @@ try:
         #allows the program to understand how to update the packages
         elif argument[1] in upgrade:
             subprocess.run(upgradeBASH)
+            sys.exit()
 
         # error message for the user if the argument is not correct
         else:
