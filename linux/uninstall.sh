@@ -1,7 +1,12 @@
 #!/bin/bash
 
 #holds the packages and color vars for the program to work
-source DontEdit.sh
+ if [ -f "DontEdit.sh" ]; then
+    source DontEdit.sh
+else
+    echo "DontEdit.sh not found!"
+    exit 1
+fi
 
 if [[ "${OSTYPE}" == "linux-gnu"* ]]; then
 
