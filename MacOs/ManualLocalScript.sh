@@ -1,7 +1,12 @@
 #!/bin/bash
 
 #holds the file that contains importent funcitons for the porgram to work
-source DontEdit.sh
+if [ -f "DontEdit.sh" ]; then
+    source DontEdit.sh
+else
+    echo "DontEdit.sh not found!"
+    exit 1
+fi
 
 # Function to check if a command exists
 command_exists() {
