@@ -198,8 +198,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
     elif [[ "$1" == "--upgrade" ]]; then
         upgradePackages
 
-    else
-        installPackages
+
     fi
     # Check for installed packages
     checkForPackages
