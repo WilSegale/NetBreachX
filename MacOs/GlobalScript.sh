@@ -144,7 +144,7 @@ else
             clear
 
             # Tells the user if they want to crack the ports that are listed in the prompt or have help if they are stuck on what to do
-            NetBreach() {
+            NetBreachX() {
                 # The logo of the program
                 figlet "${logo} GLOBAL"
                 echo "Type the number of the port you want to scan (SSH - 22, VNC - 5900, MySQL - 3306). To scan all, type 'ALL'"
@@ -239,7 +239,7 @@ else
                     if [[ $user == "" && $host == "" || $host == "" ]]; then
                         # No service specified, re-prompt for input
                         echo "No service specified"
-                        NetBreach
+                        NetBreachX
                     # If the user inputs something in the 'Input Username' function and the hostname function,
                     # it will continue as normal
                     else
@@ -275,7 +275,7 @@ else
                     if [[ $user == "" && $host == "" || $user == "" || $host == "" ]]; then
                         # No service specified, re-prompt for input
                         echo "No service specified"
-                        NetBreach
+                        NetBreachX
                     # If the user inputs something in the 'Input Username' function and the hostname function,
                     # it will continue as normal
                     else
@@ -313,7 +313,7 @@ else
                     if [[ $user == "" && $host == "" || $user == "" || $host == "" ]]; then
                         # No service specified, re-prompt for input
                         echo "No service specified"
-                        NetBreach
+                        NetBreachX
                     # If the user inputs something in the 'Input Username' function and the hostname function,
                     # it will continue as normal
                     else
@@ -325,7 +325,7 @@ else
                     fi
                 fi
             }
-            NetBreach
+            NetBreachX
 
             RunHackingCommand # Calls the RunHackingCommand function
 
