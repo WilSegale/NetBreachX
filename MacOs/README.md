@@ -45,7 +45,7 @@ python3 NetBreachX.py --skip-manual-local
 python3 NetBreachX.py --Local-Help
 python3 NetBreachX.py --Global-Help
 python3 NetBreachX.py --upgrade
-sudo python3 NetBreachX.py --install
+python3 NetBreachX.py --install
 ```
 
 ## If you want to see packages that are installed or not type
