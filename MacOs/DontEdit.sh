@@ -65,6 +65,9 @@ IP_ADDRESS=$(route -n get default | awk '/gateway/ {print $2}')
 # List of required packages/commands (separated by spaces)
 required_packages=("wget" "hydra" "nmap" "ssh" "mysql" "figlet" "zenity")
 
+forceInstall=("Install" "install")
+
+
 # Packages to check for installation
 Packages=(
     "ssh"

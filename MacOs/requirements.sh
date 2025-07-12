@@ -241,11 +241,14 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             fi
         done
         
-        echo -e "\nDo you want me to update the packages for you?"
+        echo -e "\nDo you want me to update the packages for you? "Yes/No/Install""
 
         read -p ">>> " update
         if [[ " ${yes[*]} " == *" ${update} "* ]]; then
             upgradePackages
+        
+        elif [[ " ${forceInstall[*]} " == *" ${update} "* ]]; then
+            installPackages
         fi
         echo -e "\n_________BREW PACKAGE UPDATE CHECK________"
         for package in "${Packages[@]}"; do
