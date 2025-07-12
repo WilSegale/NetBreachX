@@ -28,7 +28,6 @@ sudo python3 NetBreachX.py --MANUAL-GLOBAL
 sudo python3 NetBreachX.py --GlobalHelp
 sudo python3 NetBreachX.py --skip-manual-global
 sudo python3 NetBreachX.py --SKIPGLOBAL
-sudo python3 NetBreachX.py --install
 sudo python3 NetBreachX.py --uninstall
 sudo python3 NetBreachX.py --fix
 ```
@@ -46,6 +45,7 @@ python3 NetBreachX.py --skip-manual-local
 python3 NetBreachX.py --Local-Help
 python3 NetBreachX.py --Global-Help
 python3 NetBreachX.py --upgrade
+python3 NetBreachX.py --install
 ```
 
 ## If you want to see packages that are installed or not type
