@@ -68,13 +68,14 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
     }
 
 
-    # Function to check for installed packages
     checkForPackages() {
+        echo -e "________APT Packages________"
         for package in "${Packages[@]}"; do
-            if dpkg -l | grep -q "^ii  ${package} "; then
+            if dpkg -l | awk '{print $2}' | grep -qx "${package}"; then
                 echo -e "[ ${GREEN}OK${NC} ] ${package}"
             else
-                echo -e "[ ${RED}FAIL${NC} ] ${package}"
+                echo -e "[ ${RED}INSTALLING${NC} ] ${package}"
+                sudo apt-get install -y "$package"
             fi
         done
 
@@ -83,10 +84,11 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if python3 -c "import ${pipPackage}" &>/dev/null; then
                 echo -e "[ ${GREEN}OK${NC} ] ${pipPackage}"
             else
-                echo -e "[ ${RED}FAIL${NC} ] ${pipPackage}"
+                echo -e "[ ${RED}INSTALLING${NC} ] ${pipPackage}"
+                pip3 install "$pipPackage"
             fi
         done
-    }
+    }   
 
     # Function to install pip package
     install_pip_package() {
