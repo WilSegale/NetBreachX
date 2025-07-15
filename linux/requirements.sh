@@ -75,7 +75,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
                 echo -e "[ ${GREEN}OK${NC} ] ${package}"
             else
                 echo -e "[ ${RED}INSTALLING${NC} ] ${package}"
-                sudo apt-get install -y "$package"
+                sudo apt-get install -y "${package}"
             fi
         done
 
@@ -85,7 +85,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
                 echo -e "[ ${GREEN}OK${NC} ] ${pipPackage}"
             else
                 echo -e "[ ${RED}INSTALLING${NC} ] ${pipPackage}"
-                pip3 install "$pipPackage"
+                pip3 install "${pipPackage}"
             fi
         done
     }   
