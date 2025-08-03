@@ -57,21 +57,35 @@ else
         read -p ">>> " YES_NO
 
         if [[ "${yes[*]}" == *"${YES_NO}"* ]]; then
-            # Packages to check for installation
-            Packages=(
-                "wget"
-                "hydra"
-                "nmap"
-                "mysql"
-                "figlet"
-                "zenity"
-            )
+           $ Function to check and uninstall a package
+            check_package() {
+                package_name="$1"
+                if command -v "${package_name}" >/dev/null 2>&1; then
+                    echo "${package_name} is installed."
+                    brew uninstall "${package_name}"
+                    #echo -e "${RED}${package_name}${NC} Is not installed."
+                fi
+            }
+            # Check packages
+            for package in "${Packages[@]}"
+            do
+                check_package "${package}"
+            done
+            # Uninstall PIP packages
+            for pipPackage in "${pipPackages[@]}"
+            do
+                if python3 -m pip show "${pipPackage}" >/dev/null 2>&1; then
+                    pip3 uninstall "${pipPackage}" -y --break-system-packages
 
-            # PIP packages that will be uninstalled if they are installed
-            pipPackages=(
-                "asyncio"
-                "pyfiglet"
-            )
+                    # Check the exit status of the last command
+                    if [ $? -ne 0 ]; then
+                        echo -e "Error occurred during uninstallation of \"${pipPackage}\""
+                        exit 1
+                    else
+                        echo -e "${pipPackage}: uninstalled ${GREEN}successfully${NC}"
+                    fi
+                fi
+            done
             check_brew() {
                 # Check the exit code of the previous command
                 read -p "Do you want to uninstall Homebrew (YES/NO): " YES_NO
