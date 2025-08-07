@@ -66,7 +66,8 @@ CURRENT_DATE=$(date +"%m/%d/%Y")
 required_packages=("wget" "hydra" "nmap" "ssh" "mysql" "figlet" "zenity")
 
 forceInstall=("Install" "install")
-
+# List of required pip packages (separated by spaces)
+required_pip_packages=("python-nmap" "asyncio" "pyfiglet")
 
 # Packages to check for installation
 Packages=(

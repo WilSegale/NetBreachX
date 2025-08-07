@@ -159,7 +159,7 @@ else
                     echo -e "${RED}This can take up to 1 hour to complete.${NC}"
 
                     # Scan the entire network and display open ports
-                    sudo nmap 192.168.1.1/24 -Pn -oN scan.txt --open
+                    
                     echo "Scan complete. Open ports saved to scan.txt"
                     # asks if the user want to see scan on a open file or not
                     read -p "Would you like to see the scan on a open file (Yes or No): " SeeFile

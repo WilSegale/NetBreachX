@@ -236,7 +236,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
                 if [[ $user == "" && $host == "" || $user == "" || $host == "" ]]; then
                     # No service specified, re-prompt for input
                     echo "No service specified"
-                    NetBreach
+                    NetBreachX
                 # If the user inputs something in the 'Input Username' function and the hostname function,
                 # it will continue as normal
                 else
