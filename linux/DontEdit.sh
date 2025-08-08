@@ -76,13 +76,13 @@ Packages=(
     "hydra"
     "nmap"
     "figlet"
-    "dialog"
-    "x11-utils"
+    "zenity"
     "freerdp"
 )
 
 # PIP packages that will be uninstalled if they are installed
 pipPackages=(
+    "python-nmap"
     "asyncio"
     "pyfiglet"
 )
