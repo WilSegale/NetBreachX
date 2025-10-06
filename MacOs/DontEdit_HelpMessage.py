@@ -60,7 +60,7 @@ InfoColor = (HowToUseColor +
         HowToUseInfo18Color +
         HowToUseInfo19Color +
         HowToUseInfo20Color +
-        HowToUseInfo21Color+ 
+        HowToUseInfo21Color + 
         howToUseInfo22Color)
 #--------------HELP MESSAGE END with color-------------------#
 
