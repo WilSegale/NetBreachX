@@ -123,7 +123,8 @@ Info = (HowToUse +
         HowToUseInfo17 +
         HowToUseInfo19 +
         HowToUseInfo20 + 
-        howToUseInfo21)
+        howToUseInfo21 +
+        howToUseInfo22)
 #--------------HELP MESSAGE END-------------------#
 
 
