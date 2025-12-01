@@ -207,7 +207,7 @@ else
                 else
                     # Scan specific port
                     echo -e "Scanning IP [${GREEN}192.168.1.1/24${NC}] on port [${GREEN}${service}${NC}]"
-                    sudo nmap -sS 182.168.1.1/24 -p $service -oN $service.txt --open
+                    sudo nmap -sS "${IP_ADDRESS}"/24 -p $service -oN $service.txt --open
                     read -p "Would you like to see the ${service} on a open file (Yes or No): " SeeFile
 
                     if [[ " ${yes[*]} " == *" ${SeeFile} "* ]]; then
