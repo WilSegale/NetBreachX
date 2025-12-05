@@ -74,7 +74,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if dpkg -l | awk '{print $2}' | grep -qx "${package}"; then
                 echo -e "[ ${GREEN}OK${NC} ] ${package}"
             else
-                echo -e "[ ${RED}INSTALLING${NC} ] ${package}"
+                echo -e "[ ${yellow}INSTALLING${NC} ] ${package}"
                 sudo apt-get install -y "${package}"
             fi
         done
