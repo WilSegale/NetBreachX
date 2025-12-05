@@ -28,7 +28,6 @@ EXIT_PROGRAM_WITH_CTRL_Z(){
 handle_ctrl_z() {
     EXIT_PROGRAM_WITH_CTRL_Z
     exit 1
-    # Your custom action goes here
 }
 
 # Set up the trap to call the function on SIGTSTP (Ctrl+Z)
