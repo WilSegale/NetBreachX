@@ -89,14 +89,16 @@ else
                 bash requirements.sh
                 exit 1
             
-            #sees if the user want to not install the packages if no it exits the script
+            #sees if the user want to install the packages if yes it installs packages
+
             elif [[ " ${no[*]} " == *" ${install} "* ]]; then
                 echo "Ok stopping program"
                 exit 1
-                
-            elif [[ " ${skip[*]} " == *" ${install} "* ]]; then
 
-                NetBreach
+            #sees if the user says no so it stop the scritp
+            else
+                echo "Ok stopping program"
+                exit 1
             fi
             exit 1
         fi
