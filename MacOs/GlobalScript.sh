@@ -155,6 +155,8 @@ else
                     #tells the user that the program is scanning the network
                     echo -e "Scanning IP [${GREEN}192.168.1.1/24${NC}]"
                     
+                    sudo nmap -sS 192.168.1.1/24 --open
+
                     # Tells the user that it can take up to an hour to complete the scanning process
                     echo -e "${RED}This can take up to 1 hour to complete.${NC}"
 
