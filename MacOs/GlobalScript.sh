@@ -153,12 +153,12 @@ else
                 
                 if [[ "${service}" == "ALL" || "${service}" == "all" || "${service}" == "*" ]]; then
                     #tells the user that the program is scanning the network
-                    echo -e "Scanning IP [${GREEN}192.168.1.1/24${NC}]"
+                    echo -e "Scanning IP [${GREEN}"${IP_ADDRESS}"/24${NC}]"
                     
                     # Tells the user that it can take up to an hour to complete the scanning process
                     echo -e "${RED}This can take up to 1 hour to complete.${NC}"
  
-                    sudo nmap -sS 192.168.1.1/24 --open
+                    sudo nmap -sS "${IP_ADDRESS}"/24 --open
 
 
                     # Scan the entire network and display open ports
