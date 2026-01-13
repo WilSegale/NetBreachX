@@ -249,16 +249,13 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
         
         elif [[ " ${forceInstall[*]} " == *" ${update} "* ]]; then
             installPackages
+        
+        elif [[ " ${no[*]} " == *" ${update} "* ]]; then
+       
+            echo -e "[ ${RED}X${NC} ] Not doing update for packages"
+            exit 1
+            
         fi
-        echo -e "\n_________BREW PACKAGE UPDATE CHECK________"
-        for package in "${Packages[@]}"; do
-            if brew outdated | grep -q "^$package"; then
-                echo "${package} ❗ (needs update)"
-            else
-                echo "${package} ✅ (up to date)"
-            fi
-        done
-
         exit
     }
     
