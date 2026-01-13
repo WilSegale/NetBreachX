@@ -5,7 +5,7 @@ else
     echo "DontEdit.sh not found!"
     exit 1
 fi
-# Function to handle cleanup on exit
+# # Function to handle cleanup on exit
 # quits program with ctrl-c
 EXIT_PROGRAM_WITH_CTRL_C() {
     echo -e "${RED}[-]${NC} EXITING SOFTWARE..."
@@ -57,7 +57,7 @@ else
         read -p ">>> " YES_NO
 
         if [[ "${yes[*]}" == *"${YES_NO}"* ]]; then
-           $ Function to check and uninstall a package
+           #Function to check and uninstall a package
             check_package() {
                 package_name="$1"
                 if command -v "${package_name}" >/dev/null 2>&1; then
