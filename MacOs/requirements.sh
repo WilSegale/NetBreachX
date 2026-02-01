@@ -119,7 +119,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if [ $? -eq 0 ]; then
                 echo -e "[ ${GREEN}OK${NC} ] ${package_name} installed successfully."
             else
-                echo -e "[ ${yellow}WARNING${NC} ] ${package_name} installation failed."
+                echo -e "[ ${RED}FAILED${NC} ] ${package_name} installation failed."
             fi
         else
             echo -e "[ ${GREEN}OK${NC} ] ${package_name} is already installed."
