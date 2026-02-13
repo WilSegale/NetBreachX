@@ -529,7 +529,7 @@ try:
     #if the user does not input the correct argument it tells them what arguments to use for it to work 
     else:
         print(f'''{ErrorMessage} {explain}''', file=ERROR)
-        print(f'''{RED}{ErrorMessage}{RESET} {explain}''')
+        print(f'''{YELLOW}{ErrorMessage}{RESET} {explain}''')
 
 #holds the keyboard exit function and handles the error message
 except KeyboardInterrupt:
