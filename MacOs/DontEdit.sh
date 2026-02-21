@@ -85,7 +85,6 @@ Packages=(
 
 # PIP packages that will be uninstalled if they are installed
 pipPackages=(
-    "python-nmap"
     "asyncio"
     "pyfiglet"
 )
