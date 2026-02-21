@@ -183,7 +183,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if python3 -c "import ${package_name}" &>/dev/null; then
                 echo -e "[ ${GREEN}OK${NC} ] ${package_name} installed and verified successfully."
             else
-                echo -e "[ ${RED}ERROR${NC} ] ${package_name} installed but could not be imported in Python."
+                echo -e "[ ${BRIGHT}${yellow}ERROR${NC} ] ${package_name} installed but could not be imported in Python."
                 exit 1
             fi
         else
