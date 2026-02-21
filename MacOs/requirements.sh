@@ -158,7 +158,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if python3 -m pip install --upgrade pip --break-system-packages; then
                 echo -e "[ ${GREEN}OK${NC} ] pip upgraded successfully."
             else
-                echo -e "[ ${RED}ERROR${NC} ] Failed to upgrade pip with force."
+                echo -e "[ ${RED}FAIL${NC} ] Failed to upgrade pip with force."
             fi
         else
             title="[-] PIP FORCE"
@@ -169,7 +169,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if python3 -m pip install --upgrade pip; then
                 echo -e "[ ${GREEN}OK${NC} ] pip upgraded successfully."
             else
-                echo -e "[ ${RED}ERROR${NC} ] Failed to upgrade pip."
+                echo -e "[ ${RED}FAIL${NC} ] Failed to upgrade pip."
             fi
         fi
 
@@ -183,7 +183,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if python3 -c "import ${package_name}" &>/dev/null; then
                 echo -e "[ ${GREEN}OK${NC} ] ${package_name} installed and verified successfully."
             else
-                echo -e "[ ${RED}FAIL${NC} ] ${package_name} installed but could not be imported in Python."
+                echo -e "[ ${RED}ERROR${NC} ] ${package_name} installed but could not be imported in Python."
                 exit 1
             fi
         else
