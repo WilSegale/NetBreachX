@@ -31,7 +31,7 @@ HowToUseInfo18Color = f"\nIf you want to auto connect to a ssh session {GREEN}'p
 HowToUseInfo19Color = f"\nIf you want to see the help message for global networks type {GREEN}'python3 {SoftwareName} --Global-Help'{RESET}"
 HowToUseInfo20Color = f"\nIf you want to see the help message for local networks type {GREEN}'python3 {SoftwareName} --Local-Help'{RESET}"
 HowToUseInfo21Color = f"\nIf you want to see the packages that are installed/not installed. Type {GREEN}'python3 {SoftwareName} --list'{RESET}"
-howToUseInfo22Color = f"\nIf you want to update the packages. Type {GREEN}'python3 {SoftwareName} --upgrade'{RESET}"
+HowToUseInfo22Color = f"\nIf you want to update the packages. Type {GREEN}'python3 {SoftwareName} --upgrade'{RESET}"
 
 ProgramsUSEDCOLOR = (ProgramsUSEDCOLOR+
                 ProgramsUsedInfo01COLOR+
@@ -61,7 +61,7 @@ InfoColor = (HowToUseColor +
         HowToUseInfo19Color +
         HowToUseInfo20Color +
         HowToUseInfo21Color + 
-        howToUseInfo22Color)
+        HowToUseInfo22Color)
 #--------------HELP MESSAGE END with color-------------------#
 
 #--------------HELP MESSAGE START-------------------#
@@ -94,8 +94,8 @@ HowToUseInfo16 = f"\nIf you want to skip a step type 'sudo python3 {SoftwareName
 HowToUseInfo17 = f"\nIf you want to skip a step type 'python3 {SoftwareName} {skipLocal}'"
 HowToUseInfo19 = f"\nIf you want to see the help message for global networks type 'python3 {SoftwareName} {GlobalHelp}'"
 HowToUseInfo20 = f"\nIf you want to see the help message for local networks type 'python3 {SoftwareName} {LocalHelp}'"
-howToUseInfo21 = f"\nIf you want to see the packages that are installed/not installed. Type 'python3 {SoftwareName} {ListPackages}'"
-howToUseInfo22 = f"\nIf you want to update the packages. Type 'python3 {SoftwareName} --upgrade'"
+HowToUseInfo21 = f"\nIf you want to see the packages that are installed/not installed. Type 'python3 {SoftwareName} {ListPackages}'"
+HowToUseInfo22 = f"\nIf you want to update the packages. Type 'python3 {SoftwareName} --upgrade'"
 
 ProgramsUSED = (ProgramsUSED+
                 ProgramsUsedInfo01+
@@ -123,8 +123,8 @@ Info = (HowToUse +
         HowToUseInfo17 +
         HowToUseInfo19 +
         HowToUseInfo20 + 
-        howToUseInfo21 +
-        howToUseInfo22)
+        HowToUseInfo21 +
+        HowToUseInfo22)
 #--------------HELP MESSAGE END-------------------#
 
 
