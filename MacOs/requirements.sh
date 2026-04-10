@@ -261,14 +261,25 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
     
     upgradePackages() {
         echo "_________BREW PACKAGE UPGRADE________"
-        for package in "${Packages[@]}"; do
-            brew upgrade "${package}"
-            if [ $? -eq 0 ]; then
-                echo -e "[ ${GREEN}OK${NC} ] ${package} upgraded successfully."
-            else
-                echo -e "[ ${RED}FAIL${NC} ] ${package} upgrade failed."
+        if ! command -v brew &>/dev/null; then
+            echo -e "[ ${RED}MISSING${NC} ] Homebrew is not installed."
+            echo "Would you like to install it for you: Yes/NO"
+            read -p ">>> " InstallHomeBrew
+            if [[ " ${yes[*]} " == *" ${InstallHomeBrew} "* ]]; then
+                bash requirements.sh
+                exit 1
             fi
-        done
+            exit 1
+        else
+            for package in "${Packages[@]}"; do
+                brew upgrade "${package}"
+                if [ $? -eq 0 ]; then
+                    echo -e "[ ${GREEN}OK${NC} ] ${package} upgraded successfully."
+                else
+                    echo -e "[ ${RED}FAIL${NC} ] ${package} upgrade failed."
+                fi
+            done
+        fi
 
         echo -e "\n_________PIP PACKAGE UPGRADE________"
         for pip_pkg in "${pipPackages[@]}"; do

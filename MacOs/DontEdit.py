@@ -79,7 +79,7 @@ skipManL = {"--skip-manual-local", "--SKIP-MANUAL-LOCAL", "--skip-manual-local",
 GlobalHelpPy = {"--GlobalHelp", "--globalHelp", "--GLOBALHELP", "--global-help", "--Global-Help", "--GLOBAL-HELP"}
 LocalHelpPy = {"--LocalHelp", "--localHelp", "--LOCALHELP", "--local-help", "--Local-Help", "--LOCAL-HELP"}
 ListPackages = {"--list", "--LIST", "--List"}
-upgrade = {"--UPGRADE", "--upgrade", "--Upgrade", "-U", "-u"}
+upgrade = {"--UPGRADE", "--upgrade", "--Upgrade", "-U", "-u", "--up", "--UP", "--Up"}
 FIX = {"--FIX", "--fix", "-f", "-F"}
 
 

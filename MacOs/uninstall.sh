@@ -6,6 +6,7 @@ else
     exit 1
 fi
 # # Function to handle cleanup on exit
+
 # quits program with ctrl-c
 EXIT_PROGRAM_WITH_CTRL_C() {
     echo -e "${RED}[-]${NC} EXITING SOFTWARE..."
@@ -109,7 +110,7 @@ else
                 if command -v "${package_name}" >/dev/null 2>&1; then
                     echo "${package_name} is installed."
                     brew uninstall "${package_name}"
-                    #echo -e "${RED}${package_name}${NC} Is not installed."
+                    echo -e "${RED}${package_name}${NC} Is not installed."
                 fi
             }
 
