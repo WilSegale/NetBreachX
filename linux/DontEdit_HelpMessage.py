@@ -132,7 +132,7 @@ Info = (HowToUse +
 ErrorMessage = f'''WARNING:TIME:{formatted_time} Please use the correct number of arguments. DATE:{current_date}'''
 explain = f'''
 Please use the correct number of arguments. Example: 
-{GREEN}{GLOBAL}{RESET}put's it in global mode for attacking global networks, 
+{GREEN}{GLOBAL}{RESET} put's it in global mode for attacking global networks, 
 {GREEN}{GUI}{RESET} put's it in GUI mode to attacking in GUI GLOBAL networks, 
 {GREEN}{LOCAL}{RESET} put's it in local mode for attacking local networks,
 {GREEN}{GuiLocal}{RESET} put's it in GUI LOCAL mode for attacking in GUI LOCAL networks,
