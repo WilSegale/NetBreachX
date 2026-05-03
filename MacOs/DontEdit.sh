@@ -52,7 +52,7 @@ HELP=("-h" "--help" "--HELP" "--Help")
 
 #hold the array for the skip function
 skip=("--skip" "--SKIP" "--Skip" "-s" "-S")
-
+list=("list" "List" "LIST")
 # Gets the current time in a 12-hour format
 CURRENT_TIME=$(date +"%I:%M:%S %p")
 
