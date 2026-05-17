@@ -68,10 +68,10 @@ required_packages=("wget" "hydra" "nmap" "ssh" "mysql" "figlet" "dialog" "x11-ut
 
 # Packages to check for installation
 Packages=(
-    "ssh"
-    "mysql"
     "mysql-server"
     "python3-pip"
+    "ssh"
+    "mysql"
     "wget"
     "hydra"
     "nmap"

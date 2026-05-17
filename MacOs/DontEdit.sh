@@ -71,10 +71,10 @@ required_pip_packages=("python-nmap" "asyncio" "pyfiglet")
 
 # Packages to check for installation
 Packages=(
-    "ssh"
-    "mysql"
     "mysql-server"
     "python3-pip"
+    "ssh"
+    "mysql"
     "wget"
     "hydra"
     "nmap"
