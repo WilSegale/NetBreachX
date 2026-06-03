@@ -66,20 +66,21 @@ IPADDR=$(ip route | awk '/default/ {print $3}')
 # List of required packages/commands (separated by spaces)
 required_packages=("wget" "hydra" "nmap" "ssh" "mysql" "figlet" "dialog" "x11-utils")
 
-# Packages to check for installation
+# List of required apt packages (separated by spaces)
 Packages=(
     "mysql-server"
     "python3-pip"
-    "ssh"
-    "mysql"
-    "wget"
-    "hydra"
-    "nmap"
-    "figlet"
-    "zenity"
     "freerdp"
+    "zenity"
+    "figlet"
+    "mysql"
+    "hydra"
+    "wget"
+    "nmap"
+    "ssh"
 )
 
+# PIP packages that will be uninstalled if they are installed
 # PIP packages that will be uninstalled if they are installed
 pipPackages=(
     "python-nmap"

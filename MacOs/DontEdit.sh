@@ -73,20 +73,20 @@ required_pip_packages=("python-nmap" "asyncio" "pyfiglet")
 Packages=(
     "mysql-server"
     "python3-pip"
-    "ssh"
-    "mysql"
-    "wget"
-    "hydra"
-    "nmap"
-    "figlet"
-    "zenity"
     "freerdp"
+    "zenity"
+    "figlet"
+    "mysql"
+    "hydra"
+    "wget"
+    "nmap"
+    "ssh"
 )
 
 # PIP packages that will be uninstalled if they are installed
 pipPackages=(
-    "asyncio"
     "pyfiglet"
+    "asyncio"
 )
 
 HelpMessage="+++++++++++++++ Programs Used ++++++++++++++++
