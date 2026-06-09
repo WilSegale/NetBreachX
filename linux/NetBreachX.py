@@ -111,10 +111,10 @@ def Show_GUI():
             print(f"\n[ {RED}FAIL{RESET} ] TIME:{formatted_time} Please run as ROOT. DATE:{current_date}")
             print(f"ERROR:TIME:{formatted_time} Please run as ROOT. DATE:{current_date}", file=ERROR)
     else:
-        # makes a pop up dialog to tell the user that the OS is not correct
-        print(f"TIME:{formatted_time} Wrong OS. Please use the correct OS. DATE:{current_date}")
-        print(f"WARNING:TIME:{formatted_time} Wrong OS. Please use the correct OS. DATE:{current_date}",file=ERROR)
-
+        if platform.system() == OS:
+           print(f"\n[ {RED}FAIL{RESET} ] TIME:{formatted_time} Please run on the correct OS. DATE:{current_date}")
+           print(f"ERROR:TIME:{formatted_time} Please run on the correct OS. DATE:{current_date}", file=ERROR)
+        
 # puts it in GLOBAL mode
 def show_GLOBAL():
     # gets the current time and formats it HH:MM:SS
@@ -207,7 +207,7 @@ def show_LOCAL():
                 percentage = int(progress * 100)  # Calculate the percentage of completion
                 
                 # Print the loading bar and percentage, replacing the line each iteration
-                print(f'\rLoading {ProgramName} local mode [{bar}] {percentage} % ', end='', flush=False)
+                print(f'\rLoading {ProgramName} Local mode [{bar}] {percentage} % ', end='', flush=False)
                 
                 time.sleep(delay)  # Pause to control the update rate
         print_loading_bar(50)
@@ -215,10 +215,11 @@ def show_LOCAL():
         time.sleep(5)
         subprocess.run(LocalScript)  # the script to run after loading
     else:
-        # makes a pop up dialog to tell the user that the OS is not correct
-        # makes a pop up dialog to tell the user that the OS is not correct
-        print(f"TIME:{formatted_time} Wrong OS. Please use the correct OS. DATE:{current_date}")
-        print(f"WARNING:TIME:{formatted_time} Wrong OS. Please use the correct OS. DATE:{current_date}",file=ERROR)
+        if platform.system() == OS:
+           # makes a pop up dialog to tell the user that the OS is not correct
+           print(f"\n[ {RED}FAIL{RESET} ] TIME:{formatted_time} Please run on the correct OS. DATE:{current_date}")
+           print(f"ERROR:TIME:{formatted_time} Please run on the correct OS. DATE:{current_date}", file=ERROR)
+        
 
 #puts the program into GUI LOCAL mode
 def show_GuiLOCAL():
@@ -265,8 +266,9 @@ def show_GuiLOCAL():
     else:
         # makes a pop up dialog to tell the user that the OS is not correct
         # makes a pop up dialog to tell the user that the OS is not correct
-        print(f"TIME:{formatted_time} Wrong OS. Please use the correct OS. DATE:{current_date}")
-        print(f"WARNING:TIME:{formatted_time} Wrong OS. Please use the correct OS. DATE:{current_date}",file=ERROR)
+        if platform.system() == OS:
+           print(f"\n[ {RED}FAIL{RESET} ] TIME:{formatted_time} Please run on the correct OS. DATE:{current_date}")
+           print(f"ERROR:TIME:{formatted_time} Please run on the correct OS. DATE:{current_date}", file=ERROR)
 
 #go to the manual for the Global mode
 def show_manual_Global():
@@ -313,9 +315,10 @@ def show_manual_Global():
     else:
         # makes a pop up dialog to tell the user that the OS is not correct
         # makes a pop up dialog to tell the user that the OS is not correct
-        print(f"TIME:{formatted_time} Wrong OS. Please use the correct OS. DATE:{current_date}")
-        print(f"WARNING:TIME:{formatted_time} Wrong OS. Please use the correct OS. DATE:{current_date}",file=ERROR)
-
+        if platform.system() == OS:
+           print(f"\n[ {RED}FAIL{RESET} ] TIME:{formatted_time} Please run on the correct OS. DATE:{current_date}")
+           print(f"ERROR:TIME:{formatted_time} Please run on the correct OS. DATE:{current_date}", file=ERROR)
+        
 #go to the manual for the Local mode
 def show_manual_Local():
     # gets the current time and formats it HH:MM:SS
@@ -519,6 +522,7 @@ try:
         #allows the program to understand how to update the packages
         elif argument[1] in upgrade:
             subprocess.run(upgradeBASH)
+            sys.exit()
 
         # error message for the user if the argument is not correct
         else:
@@ -528,7 +532,7 @@ try:
     #if the user does not input the correct argument it tells them what arguments to use for it to work 
     else:
         print(f'''{ErrorMessage} {explain}''', file=ERROR)
-        print(f'''{RED}{ErrorMessage}{RESET} {explain}''')
+        print(f'''{YELLOW}{ErrorMessage}{RESET} {explain}''')
 
 #holds the keyboard exit function and handles the error message
 except KeyboardInterrupt:
