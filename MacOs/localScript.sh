@@ -98,7 +98,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
     # Check if the script is run with --help or -h
     if [[ "$1" == *"${HELP}"* ]]; then
         cat HelpLogo.txt
-        $HelpMessage
+        echo "${HelpMessage}"
 
     else
         # Clear the terminal
