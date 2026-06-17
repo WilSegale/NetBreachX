@@ -29,7 +29,6 @@ def show_help():
     print(Info, file=HelpFile)
 
     #puts the info about how to use the program on the screen
-
 # fixes the program by finding the bug and fixing it
 def fix():
     try:
@@ -59,6 +58,7 @@ def fix():
     except KeyboardInterrupt:
         print('\n[-] Exiting...')
         sys.exit(1)
+
 
 #puts program in GUI mode
 def Show_GUI():
