@@ -72,7 +72,7 @@ if [[ "$1" == "--auto" ]]; then
     exit 1
 fi
 # check if the user has put --skip in the arguemnts 
-if [[ "$1" == "--skip" ]]; then
+if [[ "$1" == *"${skip}"* ]]; then
     echo "Skipping package check"
     sleep 4
 else
