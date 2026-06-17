@@ -46,7 +46,7 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 # check if the user has put --skip in the arguemnts 
-if [[ "$1" == "--skip" ]]; then
+if [[ "$1" == *"${skip}"* ]]; then
     echo "Skipping package check"
     sleep 4
 else
