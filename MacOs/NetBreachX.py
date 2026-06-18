@@ -1,6 +1,13 @@
 from DontEdit import *
 from DontEdit_HelpMessage import *
 
+if platform.system() == OS:
+    pass
+else:
+    print(f"{YELLOW}WARNING{RESET}:TIME:{formatted_time} Wrong OS. Please use the correct OS. DATE:{current_date}")
+    print(f"WARNING:TIME:{formatted_time} Wrong OS. Please use the correct OS. DATE:{current_date}",file=ERROR)
+    sys.exit(1)
+
 #this is for the user to understand what the program does
 def show_help():
 
