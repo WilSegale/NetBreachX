@@ -134,8 +134,10 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
                 fi
                 
                 hydra -h
-                echo "Put in Hydra first to start the script."
                 echo ""
+                echo "-----------------------------------------"
+                echo "|Put in Hydra first to start the script.|"
+                echo "-----------------------------------------"
                 read -p ">>> " Hydra
 
                 if [[ " ${exit[*]} " == *" ${Hydra} "* ]]; then

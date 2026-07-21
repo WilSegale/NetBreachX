@@ -7,6 +7,35 @@ else
     exit 1
 fi
 
+
+# Loop through every package
+
+for PACKAGE in "${Packages[@]}"; do
+
+    # Check if the package is outdated
+
+    if brew outdated --quiet | grep -qx "${PACKAGE}"; then
+
+        echo "${PACKAGE} is out of date."
+        brew upgrade "${PACKAGE}"
+
+    else
+
+        echo "${PACKAGE} is up to date."
+
+    fi
+
+done
+#checks if the user is connected to the internet if they are not connceted it tells them they are not connceted and have to connect
+SITE="https://google.com/"
+if ! curl --head --silent --fail $SITE > /dev/null; then
+    echo "ERROR:TIME:${CURRENT_TIME} Please connect to the internet. DATE:${CURRENT_DATE}" >> ERROR.LOG
+    echo -e "[ ${RED}${BRIGHT}FAIL${NC} ] TIME:${CURRENT_TIME} Please connect to the internet. DATE:${CURRENT_DATE}"
+
+    exit 1
+else
+    echo ""
+fi
 # quits program with ctrl-c
 EXIT_PROGRAM_WITH_CTRL_C() {
     echo ""

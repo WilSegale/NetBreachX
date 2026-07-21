@@ -540,6 +540,6 @@ try:
 
 #holds the keyboard exit function and handles the error message
 except KeyboardInterrupt:
-    print(f"\n[ WARNING ] Running NetBreachX.py {argument[1]}. Has been stopped.",file=ERROR)
-    print(f"\n[ {BRIGHT}{YELLOW}WARNING{RESET} ] Running NetBreachX.py {argument[1]}. Has been stopped.")
+    print(f"\n[ WARNING ] Running {SoftwareName} {argument[1]}. Has been stopped.",file=ERROR)
+    print(f"\n[ {BRIGHT}{YELLOW}WARNING{RESET} ] Running {SoftwareName} {argument[1]}. Has been stopped.")
     sys.exit(1)
