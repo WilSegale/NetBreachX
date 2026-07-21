@@ -7,7 +7,68 @@ else
     echo "DontEdit.sh not found!"
     exit 1
 fi
+#!/bin/bash
 
+# Detect Linux package manager
+if command -v apt >/dev/null 2>&1; then
+    PKG_MANAGER="apt"
+elif command -v dnf >/dev/null 2>&1; then
+    PKG_MANAGER="dnf"
+elif command -v pacman >/dev/null 2>&1; then
+    PKG_MANAGER="pacman"
+else
+    echo "Unsupported Linux package manager."
+    exit 1
+fi
+
+
+# Loop through every package in the Packages array
+for PACKAGE in "${Packages[@]}"; do
+
+    # Check if the package has an update available
+
+    case "$PKG_MANAGER" in
+
+        apt)
+            UPDATE_AVAILABLE=$(apt list --upgradable 2>/dev/null | grep -w "$PACKAGE")
+            ;;
+
+        dnf)
+            UPDATE_AVAILABLE=$(dnf check-update "$PACKAGE" 2>/dev/null | grep -w "$PACKAGE")
+            ;;
+
+        pacman)
+            UPDATE_AVAILABLE=$(pacman -Qu "$PACKAGE" 2>/dev/null | grep -w "$PACKAGE")
+            ;;
+
+    esac
+
+
+    if [ -n "$UPDATE_AVAILABLE" ]; then
+
+        # Notify the user that the package is outdated
+        echo "${PACKAGE} is out of date."
+
+        # Upgrade the package
+        case "$PKG_MANAGER" in
+
+            apt)
+                sudo apt install --only-upgrade -y "$PACKAGE"
+                ;;
+
+            dnf)
+                sudo dnf upgrade -y "$PACKAGE"
+                ;;
+
+            pacman)
+                sudo pacman -S --noconfirm "$PACKAGE"
+                ;;
+        esac
+    else
+        # Notify the user that the package is already current
+        echo "${PACKAGE} is up to date."
+    fi
+done
 if [[ "$OSTYPE" == "${OS}"* ]]; then
 
     # Default values
