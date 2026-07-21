@@ -10,17 +10,21 @@ fi
 
 # Loop through every package
 
+# Loop through every package in the Packages array
 for PACKAGE in "${Packages[@]}"; do
 
-    # Check if the package is outdated
-
+    # Check if the current package has an available update
     if brew outdated --quiet | grep -qx "${PACKAGE}"; then
 
+        # Notify the user that the package is outdated
         echo "${PACKAGE} is out of date."
+
+        # Upgrade the package to the latest version
         brew upgrade "${PACKAGE}"
 
     else
 
+        # Notify the user that the package is already current
         echo "${PACKAGE} is up to date."
 
     fi
