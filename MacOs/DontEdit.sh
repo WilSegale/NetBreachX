@@ -1,4 +1,6 @@
 #!/bin/bash
+
+#VARS for the color output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 yellow="\033[33m"
@@ -7,6 +9,7 @@ NC='\033[0m' # No Color
 
 #esay way to change the FAIL message starter
 FAIL="FAIL"
+
 # grabes the username by using the "whoami" command and then grabs the hostname by using "hostname" command
 username=$(whoami)
 hostname=$(hostname)
