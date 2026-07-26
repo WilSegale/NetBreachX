@@ -7,6 +7,7 @@ else
     exit 1
 fi
 
+#checks if there is a internet connection first thing so if the user is not connected it doesnt run and say ERROR
 SITE="https://google.com/"
 if ! curl --head --silent --fail $SITE > /dev/null; then
     echo "ERROR:TIME:${CURRENT_TIME} Please connect to the internet. DATE:${CURRENT_DATE}" >> ERROR.LOG
