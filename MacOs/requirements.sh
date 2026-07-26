@@ -6,6 +6,17 @@ else
     echo "DontEdit.sh not found!"
     exit 1
 fi
+
+SITE="https://google.com/"
+if ! curl --head --silent --fail $SITE > /dev/null; then
+    echo "ERROR:TIME:${CURRENT_TIME} Please connect to the internet. DATE:${CURRENT_DATE}" >> ERROR.LOG
+    echo -e "[ ${RED}${BRIGHT}${FAIL}${NC} ] TIME:${CURRENT_TIME} Please connect to the internet. DATE:${CURRENT_DATE}"
+
+    exit 1
+else
+    echo ""
+fi
+
 if [ "$(id -u)" -eq 0 ]; then
     echo ""
     echo "+++++++++++++++++++++++++++++++++++++++++"
@@ -42,7 +53,7 @@ done
 SITE="https://google.com/"
 if ! curl --head --silent --fail $SITE > /dev/null; then
     echo "ERROR:TIME:${CURRENT_TIME} Please connect to the internet. DATE:${CURRENT_DATE}" >> ERROR.LOG
-    echo -e "[ ${RED}${BRIGHT}FAIL${NC} ] TIME:${CURRENT_TIME} Please connect to the internet. DATE:${CURRENT_DATE}"
+    echo -e "[ ${RED}${BRIGHT}${FAIL}${NC} ] TIME:${CURRENT_TIME} Please connect to the internet. DATE:${CURRENT_DATE}"
 
     exit 1
 else
@@ -109,7 +120,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
                 InstallHomeBrew
             fi
         else
-            echo -e "[ ${RED}FAIL${NC} ] NOT CONNECTED TO THE INTERNET"
+            echo -e "[ ${RED}${FAIL}${NC} ] NOT CONNECTED TO THE INTERNET"
         fi
     }
 
@@ -140,7 +151,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
                 sleep 1
                 eval "$(/opt/homebrew/bin/brew shellenv)"
                 if [ $? -ne 0 ]; then
-                    echo -e "[ ${RED}FAIL${NC} ] Homebrew installation failed."
+                    echo -e "[ ${RED}${FAIL}${NC} ] Homebrew installation failed."
                 else
                     echo -e "[ ${GREEN}OK${NC} ] Homebrew installation successful."
                     echo -e "\n${GREEN}Run the program again to install the rest of the packages.${NC}"
@@ -160,7 +171,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if [ $? -eq 0 ]; then
                 echo -e "[ ${GREEN}OK${NC} ] ${package_name} installed successfully."
             else
-                echo -e "[ ${RED}FAILED${NC} ] ${package_name} installation failed."
+                echo -e "[ ${RED}${FAIL}ED${NC} ] ${package_name} installation failed."
             fi
         else
             echo -e "[ ${GREEN}OK${NC} ] ${package_name} is already installed."
@@ -173,7 +184,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if brew list --formula | grep -q "^${package}\$"; then
                 echo -e "[ ${GREEN}OK${NC} ] ${package}"
             else
-                echo -e "[ ${RED}FAIL${NC} ] ${package}"
+                echo -e "[ ${RED}${FAIL}${NC} ] ${package}"
             fi
         done
 
@@ -182,7 +193,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if python3 -c "import ${pipPackage}" &>/dev/null; then
                 echo -e "[ ${GREEN}OK${NC} ] ${pipPackage}"
             else
-                echo -e "[ ${RED}FAIL${NC} ] ${pipPackage}"
+                echo -e "[ ${RED}${FAIL}${NC} ] ${pipPackage}"
             fi
         done
     }
@@ -199,7 +210,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if python3 -m pip install --upgrade pip --break-system-packages; then
                 echo -e "[ ${GREEN}OK${NC} ] pip upgraded successfully."
             else
-                echo -e "[ ${RED}FAIL${NC} ] Failed to upgrade pip with force."
+                echo -e "[ ${RED}${FAIL}${NC} ] Failed to upgrade pip with force."
             fi
         else
             title="[-] PIP FORCE"
@@ -210,7 +221,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if python3 -m pip install --upgrade pip; then
                 echo -e "[ ${GREEN}OK${NC} ] pip upgraded successfully."
             else
-                echo -e "[ ${RED}FAIL${NC} ] Failed to upgrade pip."
+                echo -e "[ ${RED}${FAIL}${NC} ] Failed to upgrade pip."
             fi
         fi
 
@@ -228,7 +239,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
                 exit 1
             fi
         else
-            echo -e "[ ${RED}FAIL${NC} ] Failed to install ${package_name}."
+            echo -e "[ ${RED}${FAIL}${NC} ] Failed to install ${package_name}."
             exit 1
         fi
     }
@@ -258,7 +269,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
                 echo "_________INSTALLED PACKAGES________"
                 checkForPackages
             else
-                echo -e "[ ${RED}FAIL${NC} ] Unsupported OS. Please use macOS."
+                echo -e "[ ${RED}${FAIL}${NC} ] Unsupported OS. Please use macOS."
             fi
         fi
     }
@@ -317,7 +328,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
                 if [ $? -eq 0 ]; then
                     echo -e "[ ${GREEN}OK${NC} ] ${package} upgraded successfully."
                 else
-                    echo -e "[ ${RED}FAIL${NC} ] ${package} upgrade failed."
+                    echo -e "[ ${RED}${FAIL}${NC} ] ${package} upgrade failed."
                 fi
             done
         fi
@@ -328,7 +339,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             if [ $? -eq 0 ]; then
                 echo -e "[ ${GREEN}OK${NC} ] ${pip_pkg} upgraded successfully."
             else
-                echo -e "[ ${RED}FAIL${NC} ] ${pip_pkg} upgrade failed."
+                echo -e "[ ${RED}${FAIL}${NC} ] ${pip_pkg} upgrade failed."
             fi
         done
 
