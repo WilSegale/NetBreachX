@@ -37,7 +37,7 @@ for PACKAGE in "${Packages[@]}"; do
     if brew outdated --quiet | grep -qx "${PACKAGE}"; then
 
         # Notify the user that the package is outdated
-        echo "${PACKAGE} is out of date."
+        echo -e "${PACKAGE} ${RED}is out of date.${NC}"
 
         # Upgrade the package to the latest version
         brew upgrade "${PACKAGE}"
@@ -45,7 +45,7 @@ for PACKAGE in "${Packages[@]}"; do
     else
 
         # Notify the user that the package is already current
-        echo "${PACKAGE} is up to date."
+        echo -e "${PACKAGE} ${GREEN}is up to date.${NC}"
 
     fi
 
