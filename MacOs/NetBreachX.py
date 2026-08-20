@@ -22,7 +22,6 @@ def show_help():
     with open(file_path, 'r') as file:
         content = file.read()
     print(content,file=HelpFile)
-
     
     #inputs the program used logo in a help file
     #puts the info about the program inside the help file

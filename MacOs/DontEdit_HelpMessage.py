@@ -31,8 +31,7 @@ HowToUseInfo18Color = f"\nIf you want to auto connect to a ssh session {GREEN}'p
 HowToUseInfo19Color = f"\nIf you want to see the help message for global networks type {GREEN}'python3 {SoftwareName} --Global-Help'{RESET}"
 HowToUseInfo20Color = f"\nIf you want to see the help message for local networks type {GREEN}'python3 {SoftwareName} --Local-Help'{RESET}"
 HowToUseInfo21Color = f"\nIf you want to see the packages that are installed/not installed. Type {GREEN}'python3 {SoftwareName} --list'{RESET}"
-HowToUseInfo22Color = f"\nIf you want to update the packages. Type {GREEN}'python3 {SoftwareName} --upgrade'{RESET}"
-
+HowToUseInfo22Color = f"\nIf you want to update the packages. Type {GREEN}'python3 {SoftwareName} --upgrade'{RESET}\n"
 ProgramsUSEDCOLOR = (ProgramsUSEDCOLOR+
                 ProgramsUsedInfo01COLOR+
                 ProgramsUsedInfo02COLOR+

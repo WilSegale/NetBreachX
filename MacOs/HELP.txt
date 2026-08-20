@@ -1,0 +1,40 @@
+ __  __            
+|  \/  | __ _  ___ 
+| |\/| |/ _` |/ __|
+| |  | | (_| | (__ 
+|_|  |_|\__,_|\___|
+
+ ___   _   _ _____ _     ____    ___ 
+|__ \ | | | | ____| |   |  _ \  |__ \
+  / / | |_| |  _| | |   | |_) |   / /
+ |_|  |  _  | |___| |___|  __/   |_|
+ (_)  |_| |_|_____|_____|_|      (_)  
+
+
++++++++++++++++PROGRAMS USED+++++++++++++++
+This program will help you crack passwords
+It has two programs inside it
+one is Hydra and the other is Nmap
+
++++++++++++++++HOW TO USE++++++++++++++++++
+To use the program you have to tell the computer what port you want to scan.
+It will then scan the port that you asked for on the network and see if any ports that you asked are open.
+If there are any ports that are open, it will ask for a username and hostname
+When you give the program the username and hostname, it will try to crack that given parameters you gave it.
+If you want to use the program on a global network, you can type 'sudo python3 NetBreachX.py {'-G', '--Global', '-g', '--global', '--GLOBAL'}'
+If you want to use the program with GUI support you can type 'sudo python3 NetBreachX.py {'--GUI', '-Gu', '--gui', '-GU', '--Gui'}'
+If you want to use the program locally, you can type 'python3 NetBreachX.py {'--local', '--LOCAL', '-L', '-l', '--Local'}'
+If you want to use the program with GUI in Local mode you can type 'python3 NetBreachX.py {'--gui-local', '--g-l', '--GUI-LOCAL', '--G-l', '--Gui-Local', '--G-L'}'
+If you want to have the program install required packages by it's self type 'python3 NetBreachX.py {'--install', '--in', '--INSTALL'}'
+If you want to have the program install required packages by it's self type 'python3 NetBreachX.py {'--Pip-Force', '--PIP-FORCE', '--pip-force', '-Pip-Force', '--pipForce'}'
+If you want to have the program uninstall required packages by it's self type 'python3 NetBreachX.py {'--un', '--uninstall', '--UNINSTALL'}'
+If you want to have the program allow you to input the ip address or website manually for global networks type 'sudo python3 NetBreachX.py {'--MANUAL-GLOBAL', '--m-g', '--Manual-Global', '--man-global', '--M-G', '--manual-global', '--M-g'}'
+If you want to have the program allow you to input the ip address or website manually for local networks type 'python3 NetBreachX.py {'--manual-local', '--M-l', '--M-L', '--m-l', '--MANUAL-LOCAL', '--man-local', '--Manual-Local'}'
+If you get a error message you can type 'python3 NetBreachX.py {'-f', '--fix', '--FIX', '-F'}'
+If you want to remote conenct to a computer type 'python3 NetBreachX.py {'--XFREERDP', '--XFREE', '--xfree', '--xfreerdp'}'
+If you want to skip a step type 'sudo python3 NetBreachX.py {'--skip-Global', '--skip-global', '--Skip-global', '--SKIPGLOBAL', '--Skip-Global'}'
+If you want to skip a step type 'python3 NetBreachX.py {'--Skip-Local', '--SKIP-LOCAL', '--skip-local', '--skip-Local', '--Skip-local'}'
+If you want to see the help message for global networks type 'python3 NetBreachX.py ['bash', 'GlobalScript.sh', '--help']'
+If you want to see the help message for local networks type 'python3 NetBreachX.py ['bash', 'localScript.sh', '--help']'
+If you want to see the packages that are installed/not installed. Type 'python3 NetBreachX.py {'--list', '--List', '--LIST'}'
+If you want to update the packages. Type 'python3 NetBreachX.py --upgrade'
