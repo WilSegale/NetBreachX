@@ -528,8 +528,8 @@ try:
             sys.exit()
             
         # allows the program to understand how to show the version of the packages
-        elif argument[1] in version:
-            subprocess.run(versionBASH)
+        elif argument[1] in PackageVersion:
+            subprocess.run(PackageVersionBASH)
             sys.exit()
 
         # error message for the user if the argument is not correct
