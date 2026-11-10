@@ -156,7 +156,7 @@ Please use the correct number of arguments. Example:
 {GREEN}{upgrade}{RESET} allow you to update packages so it work,
 {GREEN}{FIX}{RESET} put's it in fix mode that fixes the program,
 {GREEN}{HELP}{RESET} put's it in help mode so you understand what you are going to do with this program.
-{GREEN}{version}{RESET} shows the version of the packages installed.
+{GREEN}{PackageVersion}{RESET} shows the version of the packages installed.
 '''
 
 #--------------HELP MESSAGE END-------------------#
