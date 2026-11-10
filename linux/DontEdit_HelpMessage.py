@@ -31,8 +31,8 @@ HowToUseInfo18Color = f"\nIf you want to auto connect to a ssh session {GREEN}'p
 HowToUseInfo19Color = f"\nIf you want to see the help message for global networks type {GREEN}'python3 {SoftwareName} --Global-Help'{RESET}"
 HowToUseInfo20Color = f"\nIf you want to see the help message for local networks type {GREEN}'python3 {SoftwareName} --Local-Help'{RESET}"
 HowToUseInfo21Color = f"\nIf you want to see the packages that are installed/not installed. Type {GREEN}'python3 {SoftwareName} --list'{RESET}"
-HowToUseInfo22Color = f"\nIf you want to update the packages. Type {GREEN}'python3 {SoftwareName} --upgrade'{RESET}\n"
-HowToUseInfo23Color = f"\nIf you want to see the version of the packages. Type {GREEN}'python3 {SoftwareName} --version'{RESET}\n"
+HowToUseInfo22Color = f"\nIf you want to update the packages. Type {GREEN}'python3 {SoftwareName} --upgrade'{RESET}"
+HowToUseInfo23Color = f"\nIf you want to see the version of the packages. Type {GREEN}'python3 {SoftwareName} --Package-Version'{RESET}\n"
 
 ProgramsUSEDCOLOR = (ProgramsUSEDCOLOR+
                 ProgramsUsedInfo01COLOR+
@@ -98,7 +98,7 @@ HowToUseInfo19 = f"\nIf you want to see the help message for global networks typ
 HowToUseInfo20 = f"\nIf you want to see the help message for local networks type 'python3 {SoftwareName} {LocalHelp}'"
 HowToUseInfo21 = f"\nIf you want to see the packages that are installed/not installed. Type 'python3 {SoftwareName} {ListPackages}'"
 HowToUseInfo22 = f"\nIf you want to update the packages. Type 'python3 {SoftwareName} --upgrade'"
-HowToUseInfo23 = f"\nIf you want to see the version of the packages. Type 'python3 {SoftwareName} --version'"
+HowToUseInfo23 = f"\nIf you want to see the version of the packages. Type 'python3 {SoftwareName} --Package-Version'"
 
 ProgramsUSED = (ProgramsUSED+
                 ProgramsUsedInfo01+
@@ -156,7 +156,7 @@ Please use the correct number of arguments. Example:
 {GREEN}{upgrade}{RESET} allow you to update packages so it work,
 {GREEN}{FIX}{RESET} put's it in fix mode that fixes the program,
 {GREEN}{HELP}{RESET} put's it in help mode so you understand what you are going to do with this program.
-{GREEN}{version}{RESET} shows the version of the packages installed.
+{GREEN}{PackageVersion}{RESET} shows the version of the packages installed.
 '''
 
 #--------------HELP MESSAGE END-------------------#
