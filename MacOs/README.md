@@ -46,7 +46,7 @@ python3 NetBreachX.py --Local-Help
 python3 NetBreachX.py --Global-Help
 python3 NetBreachX.py --upgrade
 python3 NetBreachX.py --install
-python3 NetBreachX.py --version
+python3 NetBreachX.py --Package-Version
 ```
 
 ## If you want to see packages that are installed or not type
@@ -57,7 +57,7 @@ python3 NetBreachX.py --list
 ## If you want to see the current version of the packages that are installed you can do so by doing 
 
 ```bash
-python3 NetBreachX.py --version
+python3 NetBreachX.py --Package-Version
 ```
 
 ## If you are wondering how to use this script just type
