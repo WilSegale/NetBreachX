@@ -362,7 +362,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
         installPackages
 
     # argument to tell the user the Version of the pacakges
-    elif [[ "$1" == "--VERSION" ]]; then
+    elif [[ "$1" == "--Package-Version" ]]; then
         BrewPackageVersion
     fi
 
