@@ -143,7 +143,6 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
 
     # Install Homebrew if not already installed
     InstallHomeBrew() {
-        echo ""
         echo -e "[ ${RED}${BRIGHT}!${NC} ] Checking Homebrew installation..."
         if command -v brew &>/dev/null; then
             echo -e "[ ${GREEN}OK${NC} ] Homebrew is already installed."
