@@ -79,6 +79,8 @@ required_pip_packages=("python-nmap" "asyncio" "pyfiglet")
 Packages=(
     "mysql-server"
     "python3-pip"
+    "mysql-shell"
+    "python-yq"
     "freerdp"
     "zenity"
     "figlet"
