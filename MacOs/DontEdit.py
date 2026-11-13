@@ -83,8 +83,6 @@ upgrade = {"--UPGRADE", "--upgrade", "--Upgrade", "-U", "-u", "--up", "--UP", "-
 PackageVersion = {"--Package-Version", "--package-version", "--PACKAGE-VERSION", "-PV", "-pv"}
 FIX = {"--FIX", "--fix", "-f", "-F"}
 
-
-
 # Define list of scripts to run
 #normal commands for NetBreachX
 GuiScript = ["bash", "GuiGlobal.sh"]
