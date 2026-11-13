@@ -155,6 +155,8 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
                 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
                 sleep 1
                 eval "$(/opt/homebrew/bin/brew shellenv)"
+                echo 'eval "$(/opt/homebrew/bin/brew shellenv zsh)"' >> "${HOME}/.zprofile"
+                eval "$(/opt/homebrew/bin/brew shellenv zsh)"
                 if [ $? -ne 0 ]; then
                     echo -e "[ ${RED}${FAIL}${NC} ] Homebrew installation failed."
                 else
