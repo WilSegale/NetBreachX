@@ -114,13 +114,13 @@ if [[ "$1" == *"${HELP}"* ]]; then
 else
 
     # Check if root user
-    if [[ "${EUID}" -ne 0 ]]; then
+    if [[ "${EUID}" -ne "${root}" ]]; then
         echo -e "[ ${RED}${BRIGHT}FAIL${NC} ]: Please run as root."
         exit 1
     fi
     if [[ "$OSTYPE" == "${OS}"* ]]; then
         clear
-        if [[ "${EUID}" -ne $root ]]; then
+        if [[ "${EUID}" -ne "${root}" ]]; then
             # Error message if not running as root
             echo "ERROR:TIME:${CURRENT_TIME} Please run as root. DATE:${CURRENT_DATE}" >> ERROR.LOG
             echo -e "[ ${RED}${BRIGHT}FAIL${NC} ]: TIME:${CURRENT_TIME} Please run as ROOT. DATE:${CURRENT_DATE}"
