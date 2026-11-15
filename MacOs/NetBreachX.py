@@ -11,7 +11,7 @@ else:
 #this is for the user to understand what the program does
 def show_help():
 
-    HelpFile = open("HELP.txt", "w")
+    HelpFile = open("NetBreachX_Help.txt", "w")
 
     #lineArt(["figlet", f"{name}"])
     
