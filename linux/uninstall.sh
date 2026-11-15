@@ -45,17 +45,25 @@ ctrl_c() {
 # Creates a trap so Ctrl+C calls the exit function
 trap ctrl_c SIGINT
 
-
 # Checks if the operating system is Linux
-if [[ "${OSTYPE}" == "linux-gnu"* ]]; then
-
-
+if [[ "${OSTYPE}" == "${OS}"* ]]; then
+    # Uninstalls the pip packages forcefully 
+    if [[ "$1" == "--pip" ]]; then
+        for pipPackage in "${pipPackages[@]}"
+        do
+            if python3 -m pip show "${pipPackage}" >/dev/null 2>&1; then
+                pip3 uninstall "${pipPackage}" -y --break-system-packages
+            
+            else
+                echo -e "${pipPackage}: ${RED}not installed.${NC}"
+            fi
+        done
+        exit 0
+    fi
     # Ask the user for confirmation before removing packages
     echo -e "${RED}${BRIGHT}!Are you sure you want to remove your packages (YES/NO)!: ${NC}"
 
     read -p ">>> " YES_NO
-
-
 
     # Checks if the user selected YES
     if [[ "${yes[*]}" == *"${YES_NO}"* ]]; then

@@ -83,7 +83,6 @@ LocalHelpPy = {"--LocalHelp", "--localHelp", "--LOCALHELP", "--local-help", "--L
 ListPackages = {"--list", "--LIST", "--List"}
 upgrade = {"--UPGRADE", "--upgrade", "--Upgrade", "-U", "-u", "--up", "--UP", "--Up"}
 PackageVersion = {"--Package-Version", "--package-version", "--PACKAGE-VERSION", "-PV", "-pv"}
-
 FIX = {"--FIX", "--fix", "-f", "-F"}
 
 # Define list of scripts to run

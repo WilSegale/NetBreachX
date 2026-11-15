@@ -535,7 +535,12 @@ try:
         elif argument[1] in PackageVersion:
             subprocess.run(PackageVersionBASH)
             sys.exit()
-
+    
+        #uninstalls the pip packages    
+        elif argument[1] in uninstallPIP:
+            subprocess.run(uninstall_PIP)
+            sys.exit()
+        
         # error message for the user if the argument is not correct
         else:
             print(f'''{ErrorMessage} {explain}''', file=ERROR)
