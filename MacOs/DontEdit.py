@@ -70,6 +70,7 @@ GlobalManualArgument = {"--MANUAL-GLOBAL", "--Manual-Global", "--Manual-global",
 LocalManualArgument = {"--MANUAL-LOCAL", "--Manual-Local","--Manual-local", "--manual-Local", "--manual-local", "--m-l", "--M-l", "--M-L", "--man-local"}
 installRequirement = {"--INSTALL", "--install", "--in"}
 uninstallRequirement = {"--UNINSTALL", "--uninstall", "--un"}
+uninstallPIP = {"--UNINSTALL-PIP", "--uninstall-pip", "--un-pip"}
 conenctRDP = {"--xfreerdp", "--XFREERDP", "--XFREE", "--xfree"}
 pipForce = {"--pipForce", "--Pip-Force", "--PIP-FORCE", "--pip-force", "-Pip-Force"}
 autoConnect = {"--autoConnect", "--autoconnect", "--auto", "--AUTO", "-a", "-A"}
@@ -82,6 +83,7 @@ LocalHelpPy = {"--LocalHelp", "--localHelp", "--LOCALHELP", "--local-help", "--L
 ListPackages = {"--list", "--LIST", "--List"}
 upgrade = {"--UPGRADE", "--upgrade", "--Upgrade", "-U", "-u", "--up", "--UP", "--Up"}
 PackageVersion = {"--Package-Version", "--package-version", "--PACKAGE-VERSION", "-PV", "-pv"}
+
 FIX = {"--FIX", "--fix", "-f", "-F"}
 
 # Define list of scripts to run
@@ -98,6 +100,7 @@ RDPconnect = ["bash", "xfreerdp.sh"]
 install = ["bash", "requirements.sh"]
 installList = ["bash", "requirements.sh", "--list"]
 uninstall = ["bash", "uninstall.sh"]
+uninstall_PIP = ["bash", "uninstall.sh", "--pip"]
 skipGlobalBASH = ["bash", "GlobalScript.sh", "--skip"]
 skipLocalBASH = ["bash", "localScript.sh", "--skip"]
 skipManGBASH = ["bash", "ManualGlobalScript.sh", "--skip"]

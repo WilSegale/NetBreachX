@@ -52,7 +52,21 @@ if [ "$(id -u)" -eq 0 ]; then
     echo "Don't use SUDO for this script. It can cause system issues." >> ERROR.log
     exit 1
 else
-    if [[ "${OSTYPE}" == "darwin"* ]]; then
+    if [[ "${OSTYPE}" == "${OS}"* ]]; then
+
+        # Uninstalls the pip packages forcefully 
+        if [[ "$1" == "--pip" ]]; then
+            for pipPackage in "${pipPackages[@]}"
+            do
+                if python3 -m pip show "${pipPackage}" >/dev/null 2>&1; then
+                    pip3 uninstall "${pipPackage}" -y --break-system-packages
+                
+                else
+                    echo -e "${pipPackage}: ${RED}not installed.${NC}"
+                fi
+            done
+            exit 0
+        fi
 
         echo -e "${RED}${BRIGHT}!Are you sure you want to remove your Packages (YES/NO)!: ${NC}"
 
