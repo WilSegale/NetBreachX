@@ -30,9 +30,6 @@ SoftwareName = "NetBreachX.py"
 # holds the argument of the --globla function
 argument = sys.argv
 
-#terminalcommand for the os.system funciton
-terminalCommand = os.system
-
 # easy way to read the root user function
 ROOT = 0
 

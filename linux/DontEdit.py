@@ -29,9 +29,6 @@ SoftwareName = "NetBreachX.py"
 # holds the argument of the --globla function
 argument = sys.argv
 
-#terminalcommand for the os.system funciton
-terminalCommand = os.system
-
 # easy way to read the root user function
 ROOT = 0
 
@@ -42,8 +39,8 @@ RemoveFile = ["ERROR.log","ERROR.LOG"]
 lineArt = subprocess.run
 
 #name of the os
-OS = "Darwin"
-name = "MAC"
+OS = "Linux"
+name = "Linux"
 
 # Define color codes for console output
 BRIGHT = '\033[1m'
@@ -58,6 +55,7 @@ RESET = "\033[0m"
 
 #check for the internet connection
 Link="google.com"
+
 # Define constants for command-line arguments
 HELP = {"--HELP", "--Help", "--help", "-h", "-H"}
 GUI = {"--GUI", "--Gui", "--gui", "-GU","-Gu"}
@@ -104,5 +102,5 @@ SaveAuto = ["bash", "GlobalScript.sh", "--auto"]
 GlobalHelp = ["bash", "GlobalScript.sh", "--help"]
 LocalHelp = ["bash", "localScript.sh", "--help"]
 upgradeBASH = ["bash", "requirements.sh", "--upgrade"]
-PIP = ["bash", "requirements.sh", "--pipForce"]
 PackageVersionBASH = ["bash", "requirements.sh", "--Package-Version"]
+PIP = ["bash", "requirements.sh", "--pipForce"]
