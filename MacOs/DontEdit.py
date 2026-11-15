@@ -10,6 +10,7 @@ import urllib.request
 import socket
 import ipaddress
 import json
+
 # gets the current time and formats it HH:MM:SS
 current_time = datetime.datetime.now().time()
 
@@ -71,11 +72,11 @@ installRequirement = {"--INSTALL", "--install", "--in"}
 uninstallRequirement = {"--UNINSTALL", "--uninstall", "--un"}
 conenctRDP = {"--xfreerdp", "--XFREERDP", "--XFREE", "--xfree"}
 pipForce = {"--pipForce", "--Pip-Force", "--PIP-FORCE", "--pip-force", "-Pip-Force"}
-autoConnect = {"--autoConnect", "--autoconnect", "--auto", "--AUTO"}
-skipGlobal = {"--SKIPGLOBAL", "--skip-Global", "--skip-g", "--SKIP-G","--SKIP-Global","--skip-global", "--Skip-Global", "--Skip-global"}
-skipLocal = {"--skip-Local", "--SKIP-LOCAL", "--skip-l", "--SKIP-L", "--skip-local", "--Skip-Local", "--Skip-local"}
-skipManG = {"--skip-manual-global", "--SKIP-MANUAL-GLOBAL", "--skip-manual-global", "--Skip-Manual-Global", "--Skip-manual-global"}
-skipManL = {"--skip-manual-local", "--SKIP-MANUAL-LOCAL", "--skip-manual-local", "--Skip-Manual-Local", "--Skip-manual-local"}
+autoConnect = {"--autoConnect", "--autoconnect", "--auto", "--AUTO", "-a", "-A"}
+skipGlobal = {"--SKIPGLOBAL", "--skip-Global", "--skip-g", "--SKIP-G","--SKIP-Global","--skip-global", "--Skip-Global", "--Skip-global", "-s-g", "-S-G", "-s-G", "-S-g"}
+skipLocal = {"--skip-Local", "--SKIP-LOCAL", "--skip-l", "--SKIP-L", "--skip-local", "--Skip-Local", "--Skip-local", "-s-l", "-S-L", "-s-L", "-S-l"}
+skipManG = {"--skip-manual-global", "--SKIP-MANUAL-GLOBAL", "--skip-manual-global", "--Skip-Manual-Global", "--Skip-manual-global", "-s-m-g", "-S-M-G", "-s-M-G", "-S-m-g"}
+skipManL = {"--skip-manual-local", "--SKIP-MANUAL-LOCAL", "--skip-manual-local", "--Skip-Manual-Local", "--Skip-manual-local", "-s-m-l", "-S-M-L", "-s-M-L", "-S-m-l"}
 GlobalHelpPy = {"--GlobalHelp", "--globalHelp", "--GLOBALHELP", "--global-help", "--Global-Help", "--GLOBAL-HELP"}
 LocalHelpPy = {"--LocalHelp", "--localHelp", "--LOCALHELP", "--local-help", "--Local-Help", "--LOCAL-HELP"}
 ListPackages = {"--list", "--LIST", "--List"}
