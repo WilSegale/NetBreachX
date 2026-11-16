@@ -1,0 +1,3 @@
+# Set to True to install Homebrew formulae without confirmation prompts.
+# Set to False (or omit this file) to use Homebrew's default confirmation behavior.
+brewInstallYes=True

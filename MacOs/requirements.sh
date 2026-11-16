@@ -17,10 +17,9 @@ else
     echo "would you like me to make it for you"
     read -p "Enter your choice (y/n): " choice
     if [[ "$choice" =~ ^[Yy]$ ]]; then
-        echo "
-            # Set to True to install Homebrew formulae without confirmation prompts.
-            # Set to False (or omit this file) to use Homebrew's default confirmation behavior.
-            brewInstallYes=True" > settings.txt
+        echo "# Set to True to install Homebrew formulae without confirmation prompts." > settings.txt
+        echo "# Set to False (or omit this file) to use Homebrew's default confirmation behavior." >> settings.txt
+        echo "brewInstallYes=True" >> settings.txt
         echo "settings.txt created."
     fi
 fi
