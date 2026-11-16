@@ -537,6 +537,11 @@ try:
             subprocess.run(uninstall_PIP)
             sys.exit()
 
+        # shows the user the settings
+        elif argument[1] in SETTINGS:
+            subprocess.run(SETTINGSBASH)
+            sys.exit()
+
         # error message for the user if the argument is not correct
         else:
             print(f'''{ErrorMessage} {explain}''', file=ERROR)

@@ -54,6 +54,9 @@ python3 NetBreachX.py --Package-Version
 python3 NetBreachX.py --list
 ``` 
 
+## The file called 'settings.txt' allows you to use the -y function so you dont have to type y when you install the packages
+
+
 ## If you want to see the current version of the packages that are installed you can do so by doing 
 
 ```bash

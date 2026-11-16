@@ -19,6 +19,9 @@ else
     if [[ "$choice" =~ ^[Yy]$ ]]; then
         echo "# Set to True to install Homebrew formulae without confirmation prompts." > settings.txt
         echo "# Set to False (or omit this file) to use Homebrew's default confirmation behavior." >> settings.txt
+        echo "# True for auto install without having to press Y" >> settings.txt
+        echo "# False for having to press Y so you know what getting installed better" >> settings.txt
+        echo "" >> settings.txt
         echo "brewInstallYes=True" >> settings.txt
         echo "settings.txt created."
     fi
