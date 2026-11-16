@@ -1,11 +1,70 @@
 #!/bin/bash
-# Load DontEdit.sh if it exists
+# Load the optional settings file without executing its contents.
+# quits program with ctrl-c
+# checks for the file that contains the settings for the color and other configurations
 if [ -f "DontEdit.sh" ]; then
     source DontEdit.sh
 else
     echo "DontEdit.sh not found!"
     exit 1
 fi
+
+# checks for the file that contains the settings for the brew install confirmation
+if [ -f "settings.txt" ]; then
+    source settings.txt
+else
+    echo "settings.txt not found!"
+    echo "would you like me to make it for you"
+    read -p "Enter your choice (y/n): " choice
+    if [[ "$choice" =~ ^[Yy]$ ]]; then
+        echo "
+            # Set to True to install Homebrew formulae without confirmation prompts.
+            # Set to False (or omit this file) to use Homebrew's default confirmation behavior.
+            brewInstallYes=True" > settings.txt
+        echo "settings.txt created."
+    fi
+fi
+
+
+EXIT_PROGRAM_WITH_CTRL_C() {
+    echo ""
+    echo -e "${RED}${BRIGHT}[-]${NC} EXITING SOFTWARE..."
+    # Add cleanup commands here
+    exit 1
+}
+
+# quits program with ctrl-z
+EXIT_PROGRAM_WITH_CTRL_Z(){
+    echo ""
+    echo -e "${RED}${BRIGHT}[-]${NC} EXITING SOFTWARE..."
+    # Add cleanup commands here
+    exit 1
+}
+
+# Function to be executed when Ctrl+Z is pressed
+handle_ctrl_z() {
+    EXIT_PROGRAM_WITH_CTRL_Z
+    exit 1
+    # Your custom action goes here
+}
+
+SETTINGS="$(dirname "$0")/settings.txt"
+brewInstallYes=False
+
+if [[ -f "$SETTINGS" ]]; then
+    while IFS= read -r setting_line || [[ -n "$setting_line" ]]; do
+        setting_line="${setting_line%$'\r'}"
+        [[ "$setting_line" =~ ^[[:space:]]*(#.*)?$ ]] && continue
+        if [[ "$setting_line" =~ ^[[:space:]]*brewInstallYes[[:space:]]*=[[:space:]]*(True|False)[[:space:]]*$ ]]; then
+            brewInstallYes="${BASH_REMATCH[1]}"
+        else
+            echo "Invalid setting in ${SETTINGS}; expected brewInstallYes=True or brewInstallYes=False." >&2
+            exit 1
+        fi
+    done < "$SETTINGS"
+fi
+
+
 
 #checks if there is a internet connection first thing so if the user is not connected it doesnt run and say ERROR
 SITE="https://google.com/"
@@ -65,28 +124,6 @@ if ! curl --head --silent --fail $SITE > /dev/null; then
 else
     echo ""
 fi
-# quits program with ctrl-c
-EXIT_PROGRAM_WITH_CTRL_C() {
-    echo ""
-    echo -e "${RED}${BRIGHT}[-]${NC} EXITING SOFTWARE..."
-    # Add cleanup commands here
-    exit 1
-}
-
-# quits program with ctrl-z
-EXIT_PROGRAM_WITH_CTRL_Z(){
-    echo ""
-    echo -e "${RED}${BRIGHT}[-]${NC} EXITING SOFTWARE..."
-    # Add cleanup commands here
-    exit 1
-}
-
-# Function to be executed when Ctrl+Z is pressed
-handle_ctrl_z() {
-    EXIT_PROGRAM_WITH_CTRL_Z
-    exit 1
-    # Your custom action goes here
-}
 
 # Set up the trap to call the function on SIGTSTP (Ctrl+Z)
 trap 'handle_ctrl_z' SIGTSTP
@@ -148,8 +185,13 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             echo -e "[ ${GREEN}OK${NC} ] Homebrew is already installed."
         else
             echo "Homebrew is not installed."
-            echo "Would you like to install Homebrew? (YES/NO)"
-            read -p ">>> " Answer
+            if [[ "$brewInstallYes" == "True" ]]; then
+                Answer="YES"
+                echo "brewInstallYes=True; continuing with Homebrew installation."
+            else
+                echo "Would you like to install Homebrew? (YES/NO)"
+                read -r -p ">>> " Answer
+            fi
             if [[ " ${yes[*]} " == *" ${Answer} "*  ]]; then
                 echo "Installing Homebrew..."
                 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -174,7 +216,11 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
     install_brew_package() {
         package_name="$1"
         if ! brew list --formula | grep -q "^${package_name}\$"; then
-            brew install "${package_name}"
+            if [[ "$brewInstallYes" == "True" ]]; then
+                brew install -y "${package_name}"
+            else
+                brew install "${package_name}"
+            fi
             if [ $? -eq 0 ]; then
                 echo -e "[ ${GREEN}OK${NC} ] ${package_name} installed successfully."
             else
@@ -348,6 +394,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
     # Handle Ctrl+C (SIGINT)
     trap 'EXIT_PROGRAM_WITH_CTRL_C' SIGINT
 
+    # argument to display the help message
     if [[ "$1" == "--help" || "$1" == "-h" ]]; then
         HELP
 
