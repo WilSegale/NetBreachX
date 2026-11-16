@@ -1,5 +1,5 @@
 from DontEdit import *
-
+SetFile = "settings.txt"
 #esay way to edit and change the help messages
 #--------------HELP MESSAGE START with color-------------------#
 #This is for the user to know what programs are used in this program
@@ -134,6 +134,13 @@ Info = (HowToUse +
         HowToUseInfo24)
 #--------------HELP MESSAGE END-------------------#
 
+# text for the config file so it can be easily edited and changed
+settings = f'''
+#Set to True to install Homebrew formulae without confirmation prompts. "# Set to False (or omit this file) to use Homebrew's default confirmation behavior.
+#True for auto install without having to press Y
+#False for having to press Y so you know what getting installed better
+brewInstallYes=True
+'''
 
 
 #place to esaly edit and change the warning message are error log

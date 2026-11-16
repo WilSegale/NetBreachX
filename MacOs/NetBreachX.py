@@ -539,13 +539,21 @@ try:
 
         # shows the user the settings
         elif argument[1] in SETTINGS:
-            subprocess.run(SETTINGSBASH)
+            if os.path.exists(SetFile):
+                subprocess.run(SETTINGSBASH)
+                sys.exit()
+
+            else:
+                with open(SetFile, "w") as settings_file:
+                    print(f''' {settings}''', file=settings_file)
+                    sys.exit()
+                sys.exit()
             sys.exit()
 
         # error message for the user if the argument is not correct
         else:
-            print(f'''{ErrorMessage} {explain}''', file=ERROR)
-            print(f'''{RED}{ErrorMessage}{RESET} {explain}''')
+            print(f'''{ErrorMessage} {settings}''', file=ERROR)
+            print(f'''{RED}{ErrorMessage}{RESET} {settings}''')
     
     #if the user does not input the correct argument it tells them what arguments to use for it to work 
     else:
