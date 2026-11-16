@@ -149,8 +149,8 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
         else
             echo "Homebrew is not installed."
             echo "Would you like to install Homebrew? (YES/NO)"
-            read -p ">>> " answer
-            if [[ " ${yes[*]} " == *" ${answer} "*  ]]; then
+            read -p ">>> " Answer
+            if [[ " ${yes[*]} " == *" ${Answer} "*  ]]; then
                 echo "Installing Homebrew..."
                 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
                 sleep 1
@@ -195,7 +195,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             fi
         done
 
-        echo -e "________PIP Packages________"
+        echo -e "\n________PIP Packages________"
         for pipPackage in "${pipPackages[@]}"; do
             if python3 -c "import ${pipPackage}" &>/dev/null; then
                 echo -e "[ ${GREEN}OK${NC} ] ${pipPackage}"
@@ -253,7 +253,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
 
     # Install packages function
     installPackages() {
-        if [ "$(id -u)" -eq 0 ]; then
+        if [ "$(id -u)" -eq "${root}" ]; then
             # Gives the user something to read so they understand why they got the error.
             #because using sudo can cause issues with the system and can break the system if the user is not careful
             echo ""
@@ -265,18 +265,19 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
             echo "[ WARNING ] Don't use SUDO for this script. It can cause system issues." >> ERROR.log
             exit 1
         else
-            if [[ "${OSTYPE}" == "darwin"* ]]; then
-                echo "_________BREW PACKAGES INSTALLATION________"
+            if [[ "${OSTYPE}" == "${OS}"* ]]; then
+                
+                echo -e "\n_________BREW PACKAGES INSTALLATION________"
                 for package in "${Packages[@]}"; do
                     install_brew_package "${package}"
                 done
 
-                echo "_________PIP PACKAGES INSTALLATION AND PIP UPDATE________"
+                echo -e "\n_________PIP PACKAGES INSTALLATION AND PIP UPDATE________"
                 for PIP in "${pipPackages[@]}"; do
                     install_pip_package "${PIP}"
                 done
-
-                echo "_________INSTALLED PACKAGES________"
+            
+                echo -e "\n_________INSTALLED PACKAGES________"
                 checkForPackages
             else
                 echo -e "[ ${RED}${FAIL}${NC} ] Unsupported OS. Please use macOS."
@@ -285,6 +286,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
     }
 
     listForPackages() {
+        echo ""
         echo "_________BREW PACKAGE CHECK________"
         for package in "${Packages[@]}"; do
             if brew list --formula | grep -q "^$package\$"; then
