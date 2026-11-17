@@ -337,7 +337,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
         echo ""
         echo "_________BREW PACKAGE CHECK________"
         for package in "${Packages[@]}"; do
-            if brew list --formula | grep -q "^$package\$"; then
+            if brew list --formula | grep -q "^${package}\$"; then
                 echo "${package} ✅"
             else
                 echo "${package} ❌ (not installed)"
@@ -346,7 +346,7 @@ if [[ "$OSTYPE" == "${OS}"* ]]; then
 
         echo -e "\n_________PIP PACKAGE CHECK________"
         for pip_pkg in "${pipPackages[@]}"; do
-            if pip3 list --format=freeze 2>/dev/null | grep -i "^$pip_pkg=="; then
+            if pip3 list --format=freeze 2>/dev/null | grep -i "^${pip_pkg}=="; then
                 echo "${pip_pkg} ✅"
             else
                 echo "${pip_pkg} ❌ (not installed)"
