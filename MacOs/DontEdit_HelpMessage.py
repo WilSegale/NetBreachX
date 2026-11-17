@@ -1,6 +1,4 @@
 from DontEdit import *
-SetFile = "settings.txt"
-#esay way to edit and change the help messages
 #--------------HELP MESSAGE START with color-------------------#
 #This is for the user to know what programs are used in this program
 ProgramsUSEDCOLOR = f"+++++++++++++++PROGRAMS USED+++++++++++++++"
@@ -33,7 +31,6 @@ HowToUseInfo20Color = f"\nIf you want to see the help message for local networks
 HowToUseInfo21Color = f"\nIf you want to see the packages that are installed/not installed. Type {GREEN}'python3 {SoftwareName} --list'{RESET}"
 HowToUseInfo22Color = f"\nIf you want to update the packages. Type {GREEN}'python3 {SoftwareName} --upgrade'{RESET}"
 HowToUseInfo23Color = f"\nIf you want to see the version of the packages. Type {GREEN}'python3 {SoftwareName} --Package-Version'{RESET}"
-HowToUseInfo24Color = f"\nIf you want to see the settings. Type {GREEN}'python3 {SoftwareName} --settings'{RESET}"
 
 ProgramsUSEDCOLOR = (ProgramsUSEDCOLOR+
                 ProgramsUsedInfo01COLOR+
@@ -64,8 +61,7 @@ InfoColor = (HowToUseColor +
         HowToUseInfo20Color +
         HowToUseInfo21Color + 
         HowToUseInfo22Color +
-        HowToUseInfo23Color +
-        HowToUseInfo24Color)
+        HowToUseInfo23Color )
 #--------------HELP MESSAGE END with color-------------------#
 
 #--------------HELP MESSAGE START-------------------#
@@ -101,7 +97,7 @@ HowToUseInfo20 = f"\nIf you want to see the help message for local networks type
 HowToUseInfo21 = f"\nIf you want to see the packages that are installed/not installed. Type 'python3 {SoftwareName} {ListPackages}'"
 HowToUseInfo22 = f"\nIf you want to update the packages. Type 'python3 {SoftwareName} --upgrade'"
 HowToUseInfo23 = f"\nIf you want to see the version of the packages. Type 'python3 {SoftwareName} --Package-Version'"
-HowToUseInfo24 = f"If you want to see the settings. Type 'python3 {SoftwareName} --settings'"
+
 ProgramsUSED = (ProgramsUSED+
                 ProgramsUsedInfo01+
                 ProgramsUsedInfo02+
@@ -130,8 +126,7 @@ Info = (HowToUse +
         HowToUseInfo20 + 
         HowToUseInfo21 +
         HowToUseInfo22 +
-        HowToUseInfo23 +
-        HowToUseInfo24)
+        HowToUseInfo23 )
 #--------------HELP MESSAGE END-------------------#
 
 # text for the config file so it can be easily edited and changed
@@ -167,7 +162,6 @@ Please use the correct number of arguments. Example:
 {GREEN}{FIX}{RESET} put's it in fix mode that fixes the program,
 {GREEN}{HELP}{RESET} put's it in help mode so you understand what you are going to do with this program.
 {GREEN}{PackageVersion}{RESET} shows the version of the packages installed.
-{GREEN}{SETTINGS}{RESET} shows the settings.
 '''
 
 #--------------HELP MESSAGE END-------------------#
